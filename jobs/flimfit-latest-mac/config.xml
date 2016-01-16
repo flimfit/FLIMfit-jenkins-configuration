@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.15.0">
+      <projectUrl>https://github.com/openmicroscopy/Imperial-FLIMfit/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/openmicroscopy/Imperial-FLIMfit.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.SubmoduleOption>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>true</recursiveSubmodules>
+        <trackingSubmodules>false</trackingSubmodules>
+        <reference></reference>
+      </hudson.plugins.git.extensions.impl.SubmoduleOption>
+    </extensions>
+  </scm>
+  <assignedNode>garvan-mac</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.15.0">
+      <spec></spec>
+    </com.cloudbees.jenkins.GitHubPushTrigger>
+    <hudson.triggers.SCMTrigger>
+      <spec>H/2 * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <EnvInjectBuilder plugin="envinject@1.92.1">
+      <info>
+        <propertiesContent>OME=5.1
+BOOST_VER_MAJOR=1
+BOOST_VER_MINOR=59
+MATLAB_VER=R2015b
+PATH=$PATH:/usr/local/bin</propertiesContent>
+      </info>
+    </EnvInjectBuilder>
+    <hudson.tasks.Shell>
+      <command>./Configure.sh
+rm -rf FLIMfitStandalone/BuiltApps/*
+./BuildFLIMfit.sh
+echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
+    </hudson.tasks.Shell>
+    <EnvInjectBuilder plugin="envinject@1.92.1">
+      <info>
+        <propertiesFilePath>git.properties</propertiesFilePath>
+      </info>
+    </EnvInjectBuilder>
+  </builders>
+  <publishers>
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
+      <credentialsId>FLIMfit</credentialsId>
+      <uploads>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <pathPrefix>FLIMfitStandalone/BuiltApps/</pathPrefix>
+          <module/>
+          <sourceGlobWithVars>FLIMfitStandalone/BuiltApps/*.zip</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
+      </uploads>
+    </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
+  </publishers>
+  <buildWrappers/>
+</project>

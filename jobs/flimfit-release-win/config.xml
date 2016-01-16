@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.15.0">
+      <projectUrl>https://github.com/openmicroscopy/Imperial-FLIMfit/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
+          <name>TAGGED_VERSION</name>
+          <description></description>
+          <uuid>2fd21b5c-1fc6-46a1-ab8a-9a24cb916402</uuid>
+          <type>PT_TAG</type>
+          <branch>master</branch>
+          <tagFilter>*</tagFilter>
+          <sortMode>DESCENDING_SMART</sortMode>
+          <defaultValue></defaultValue>
+        </net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/openmicroscopy/Imperial-FLIMfit.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>tags/$TAGGED_VERSION</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.SubmoduleOption>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>true</recursiveSubmodules>
+        <trackingSubmodules>false</trackingSubmodules>
+        <reference></reference>
+      </hudson.plugins.git.extensions.impl.SubmoduleOption>
+      <org.jenkinsci.plugins.gittagmessage.GitTagMessageExtension plugin="git-tag-message@1.4"/>
+    </extensions>
+  </scm>
+  <assignedNode>garvan-win</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <EnvInjectBuilder plugin="envinject@1.92.1">
+      <info>
+        <propertiesContent>OME=5.1
+MSVC_VER=14
+BOOST_VER_MAJOR=1
+BOOST_VER_MINOR=59
+MATLAB_VER=R2015b
+NO_ADMIN=true </propertiesContent>
+      </info>
+    </EnvInjectBuilder>
+    <hudson.tasks.BatchFile>
+      <command>Configure.bat</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
+      <command>GatherDependencies.bat</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
+      <command>set VERSION=%TAGGED_VERSION%&#xd;
+RMDIR FLIMfitStandalone /s /q&#xd;
+BuildFLIMfit.bat</command>
+    </hudson.tasks.BatchFile>
+  </builders>
+  <publishers>
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
+      <credentialsId>FLIMfit</credentialsId>
+      <uploads>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://flimfit-downloads/release/${TAGGED_VERSION}</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <pathPrefix>FLIMfitStandalone/Installer/</pathPrefix>
+          <module/>
+          <sourceGlobWithVars>**/FLIMfitStandalone/Installer/*.exe</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
+      </uploads>
+    </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
+  </publishers>
+  <buildWrappers/>
+</project>

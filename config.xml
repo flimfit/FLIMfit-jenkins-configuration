@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors>
+    <string>jenkins.security.s2m.MasterKillSwitchWarning</string>
+    <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
+  </disabledAdministrativeMonitors>
+  <version>1.644</version>
+  <numExecutors>2</numExecutors>
+  <mode>EXCLUSIVE</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="org.jenkinsci.plugins.GithubAuthorizationStrategy" plugin="github-oauth@0.22.2">
+    <rootACL>
+      <organizationNameList class="linked-list">
+        <string>openmicroscopy</string>
+      </organizationNameList>
+      <adminUserNameList class="linked-list">
+        <string>seanwarren</string>
+      </adminUserNameList>
+      <authenticatedUserReadPermission>true</authenticatedUserReadPermission>
+      <useRepositoryPermissions>true</useRepositoryPermissions>
+      <authenticatedUserCreateJobPermission>false</authenticatedUserCreateJobPermission>
+      <allowGithubWebHookPermission>false</allowGithubWebHookPermission>
+      <allowCcTrayPermission>false</allowCcTrayPermission>
+      <allowAnonymousReadPermission>false</allowAnonymousReadPermission>
+      <allowAnonymousJobStatusPermission>false</allowAnonymousJobStatusPermission>
+    </rootACL>
+  </authorizationStrategy>
+  <securityRealm class="org.jenkinsci.plugins.GithubSecurityRealm">
+    <githubWebUri>https://github.com</githubWebUri>
+    <githubApiUri>https://api.github.com</githubApiUri>
+    <clientID>8b3d364f7c8bcfd1c983</clientID>
+    <clientSecret>fd827560015cd26725527f06a48c02dd3059b8ab</clientSecret>
+    <oauthScopes>read:org,user:email</oauthScopes>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${ITEM_ROOTDIR}/workspace</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+  <jdks/>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>All</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+  </views>
+  <primaryView>All</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <label>master</label>
+  <nodeProperties/>
+  <globalNodeProperties/>
+</hudson>
