@@ -5,5 +5,7 @@
   <noUserCommitMessage>false</noUserCommitMessage>
   <displayStatus>true</displayStatus>
   <commitMessagePattern>[message]</commitMessagePattern>
-  <manualSynchronizationIncludes/>
+  <manualSynchronizationIncludes>
+    <include>http://ci.flimfit.org/pluginManager/api/json?tree=plugins[shortName,version]&amp;pretty=true.</include>
+  </manualSynchronizationIncludes>
 </hudson.plugins.scm__sync__configuration.ScmSyncConfigurationPlugin>
