@@ -47,6 +47,7 @@
     <hudson.model.AllView>
       <owner class="hudson" reference="../../.."/>
       <name>All</name>
+      <description>Build Server for FLIMfit and Timpson Lab projects</description>
       <filterExecutors>false</filterExecutors>
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
@@ -89,6 +90,8 @@
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
         <string>organotypic-invasion-scoring-mac</string>
         <string>organotypic-invasion-scoring-win</string>
+        <string>shg-quantification-tools-mac</string>
+        <string>shg-quantification-tools-win</string>
       </jobNames>
       <jobFilters/>
       <columns>
