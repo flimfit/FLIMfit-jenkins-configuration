@@ -52,7 +52,7 @@
       <credentialsId>Timpson Lab</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>gs://timpson-lab/shg-quantification-tools/</bucketNameWithVars>
+          <bucketNameWithVars>gs://timpson-lab/shg-quantification-tools</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <pathPrefix>shg-quantification-tools/build/</pathPrefix>
