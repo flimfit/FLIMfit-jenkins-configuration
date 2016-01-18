@@ -1,0 +1,188 @@
+{
+  "plugins" : [
+    {
+      "shortName" : "git-client",
+      "version" : "1.19.1"
+    },
+    {
+      "shortName" : "oauth-credentials",
+      "version" : "0.3"
+    },
+    {
+      "shortName" : "matrix-project",
+      "version" : "1.6"
+    },
+    {
+      "shortName" : "external-monitor-job",
+      "version" : "1.4"
+    },
+    {
+      "shortName" : "ssh-agent",
+      "version" : "1.9"
+    },
+    {
+      "shortName" : "subversion",
+      "version" : "1.54"
+    },
+    {
+      "shortName" : "thinBackup",
+      "version" : "1.7.4"
+    },
+    {
+      "shortName" : "workflow-step-api",
+      "version" : "1.12"
+    },
+    {
+      "shortName" : "cvs",
+      "version" : "2.11"
+    },
+    {
+      "shortName" : "ssh-slaves",
+      "version" : "1.9"
+    },
+    {
+      "shortName" : "git-parameter",
+      "version" : "0.4.0"
+    },
+    {
+      "shortName" : "plain-credentials",
+      "version" : "1.1"
+    },
+    {
+      "shortName" : "scm-sync-configuration",
+      "version" : "0.0.9"
+    },
+    {
+      "shortName" : "envinject",
+      "version" : "1.92.1"
+    },
+    {
+      "shortName" : "antisamy-markup-formatter",
+      "version" : "1.1"
+    },
+    {
+      "shortName" : "windows-slaves",
+      "version" : "1.0"
+    },
+    {
+      "shortName" : "ssh-credentials",
+      "version" : "1.11"
+    },
+    {
+      "shortName" : "jquery-ui",
+      "version" : "1.0.2"
+    },
+    {
+      "shortName" : "simple-theme-plugin",
+      "version" : "0.3"
+    },
+    {
+      "shortName" : "maven-plugin",
+      "version" : "2.7.1"
+    },
+    {
+      "shortName" : "ant",
+      "version" : "1.2"
+    },
+    {
+      "shortName" : "github-api",
+      "version" : "1.71"
+    },
+    {
+      "shortName" : "ldap",
+      "version" : "1.11"
+    },
+    {
+      "shortName" : "github",
+      "version" : "1.15.0"
+    },
+    {
+      "shortName" : "junit",
+      "version" : "1.10"
+    },
+    {
+      "shortName" : "artifactdeployer",
+      "version" : "0.33"
+    },
+    {
+      "shortName" : "greenballs",
+      "version" : "1.15"
+    },
+    {
+      "shortName" : "script-security",
+      "version" : "1.13"
+    },
+    {
+      "shortName" : "git",
+      "version" : "2.4.1"
+    },
+    {
+      "shortName" : "pam-auth",
+      "version" : "1.1"
+    },
+    {
+      "shortName" : "github-oauth",
+      "version" : "0.22.2"
+    },
+    {
+      "shortName" : "matrix-auth",
+      "version" : "1.1"
+    },
+    {
+      "shortName" : "javadoc",
+      "version" : "1.1"
+    },
+    {
+      "shortName" : "token-macro",
+      "version" : "1.12.1"
+    },
+    {
+      "shortName" : "jquery",
+      "version" : "1.11.2-0"
+    },
+    {
+      "shortName" : "google-storage-plugin",
+      "version" : "0.10-SNAPSHOT (private-01/14/2016 14:29-sean)"
+    },
+    {
+      "shortName" : "ghprb",
+      "version" : "1.29.8"
+    },
+    {
+      "shortName" : "parameterized-trigger",
+      "version" : "2.30"
+    },
+    {
+      "shortName" : "scm-api",
+      "version" : "1.0"
+    },
+    {
+      "shortName" : "translation",
+      "version" : "1.10"
+    },
+    {
+      "shortName" : "gravatar",
+      "version" : "2.1"
+    },
+    {
+      "shortName" : "credentials",
+      "version" : "1.24"
+    },
+    {
+      "shortName" : "git-tag-message",
+      "version" : "1.4"
+    },
+    {
+      "shortName" : "google-metadata-plugin",
+      "version" : "0.2"
+    },
+    {
+      "shortName" : "mailer",
+      "version" : "1.16"
+    },
+    {
+      "shortName" : "google-oauth-plugin",
+      "version" : "0.4"
+    }
+  ]
+}
