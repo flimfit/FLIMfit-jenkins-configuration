@@ -87,8 +87,8 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
-        <string>organotypic-invasion-scoring</string>
         <string>organotypic-invasion-scoring-mac</string>
+        <string>organotypic-invasion-scoring-win</string>
       </jobNames>
       <jobFilters/>
       <columns>
