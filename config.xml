@@ -59,6 +59,13 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>flimfit-latest-mac</string>
+        <string>flimfit-latest-win</string>
+        <string>flimfit-merge-mac</string>
+        <string>flimfit-release</string>
+        <string>flimfit-release-downloads</string>
+        <string>flimfit-release-mac</string>
+        <string>flimfit-release-win</string>
       </jobNames>
       <jobFilters/>
       <columns>
