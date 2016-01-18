@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.15.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
       <projectUrl>https://github.com/timpsonlab/organotypic-invasion-scoring/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -25,7 +25,7 @@
     <submoduleCfg class="list"/>
     <extensions/>
   </scm>
-  <assignedNode>garvan-win</assignedNode>
+  <assignedNode>garvan-mac</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -38,12 +38,25 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.tasks.BatchFile>
-      <command>cd organotypic-invasion-scoring&#xd;
-matlab -nosplash -nodisplay -wait -log compile_output.txt -r &quot;Compile; quit();&quot;&#xd;
-</command>
-    </hudson.tasks.BatchFile>
+    <hudson.tasks.Shell>
+      <command>cd organotypic-invasion-scoring
+/Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodisplay -r &quot;Compile; quit();&quot;</command>
+    </hudson.tasks.Shell>
   </builders>
-  <publishers/>
+  <publishers>
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
+      <credentialsId>Timpson Lab</credentialsId>
+      <uploads>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://timpson-lab/organotypic-invasion-scoring</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <pathPrefix>organotypic-invasion-scoring/build/</pathPrefix>
+          <module/>
+          <sourceGlobWithVars>organotypic-invasion-scoring/build/*/*/*.dmg</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
+      </uploads>
+    </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
+  </publishers>
   <buildWrappers/>
 </project>
