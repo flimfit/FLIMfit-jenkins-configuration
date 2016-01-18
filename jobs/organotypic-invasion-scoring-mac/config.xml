@@ -40,7 +40,7 @@
   <builders>
     <hudson.tasks.BatchFile>
       <command>cd organotypic-invasion-scoring&#xd;
-&quot;C:\Program Files\MATLAB\R2015b\bin\matlab.exe&quot; -nosplash -nodesktop -wait -log compile_output.txt -r &quot;cd(&apos;%CD%&apos;); Compile; quit();&quot;&#xd;
+matlab -nosplash -nodisplay -wait -log compile_output.txt -r &quot;Compile; quit();&quot;&#xd;
 </command>
     </hudson.tasks.BatchFile>
   </builders>
