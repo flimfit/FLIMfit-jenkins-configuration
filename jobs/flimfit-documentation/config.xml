@@ -42,7 +42,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>sphinx-build -c source -v</command>
+      <command>sphinx-build -v source build</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
