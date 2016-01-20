@@ -34,10 +34,6 @@
     <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.16.0">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
-    <hudson.triggers.SCMTrigger>
-      <spec>H/2 * * * *</spec>
-      <ignorePostCommitHooks>false</ignorePostCommitHooks>
-    </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
