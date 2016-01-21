@@ -19,7 +19,7 @@
       <authenticatedUserReadPermission>true</authenticatedUserReadPermission>
       <useRepositoryPermissions>true</useRepositoryPermissions>
       <authenticatedUserCreateJobPermission>false</authenticatedUserCreateJobPermission>
-      <allowGithubWebHookPermission>false</allowGithubWebHookPermission>
+      <allowGithubWebHookPermission>true</allowGithubWebHookPermission>
       <allowCcTrayPermission>false</allowCcTrayPermission>
       <allowAnonymousReadPermission>true</allowAnonymousReadPermission>
       <allowAnonymousJobStatusPermission>true</allowAnonymousJobStatusPermission>
