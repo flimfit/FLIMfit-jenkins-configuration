@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.15.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
       <projectUrl>https://github.com/openmicroscopy/Imperial-FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -38,7 +38,7 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.15.0">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.16.0">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
     <hudson.triggers.SCMTrigger>
@@ -59,10 +59,10 @@ NO_ADMIN=true </propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
-      <command>ECHO Configure.bat</command>
+      <command>Configure.bat</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
-      <command>ECHO GatherDependencies.bat</command>
+      <command>GatherDependencies.bat</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
       <command>RMDIR FLIMfitStandalone /s /q&#xd;
