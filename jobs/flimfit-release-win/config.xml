@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.15.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
       <projectUrl>https://github.com/openmicroscopy/Imperial-FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>2fd21b5c-1fc6-46a1-ab8a-9a24cb916402</uuid>
+          <uuid>b71786d8-4713-4ba8-b8e0-c6c140fa55b1</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -38,6 +38,7 @@
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <submoduleCfg class="list"/>
     <extensions>
+      <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
       <hudson.plugins.git.extensions.impl.SubmoduleOption>
         <disableSubmodules>false</disableSubmodules>
         <recursiveSubmodules>true</recursiveSubmodules>
