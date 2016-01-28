@@ -110,7 +110,7 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>gs://flimfit-downloads/latest/${GIT_DESCRIBE}</bucketNameWithVars>
+          <bucketNameWithVars>gs://flimfit-downloads/merge/${GIT_DESCRIBE}</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <pathPrefix>FLIMfitStandalone/Installer/</pathPrefix>
