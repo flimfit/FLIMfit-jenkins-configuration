@@ -65,9 +65,9 @@
       <gitHubAuthId>f0858a9a-5f4e-4833-827e-67b19ee0679d</gitHubAuthId>
       <extensions>
         <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
-          <commitStatusContext></commitStatusContext>
-          <triggeredStatus></triggeredStatus>
-          <startedStatus></startedStatus>
+          <commitStatusContext>CI server build</commitStatusContext>
+          <triggeredStatus>Triggering build...</triggeredStatus>
+          <startedStatus>Starting build...</startedStatus>
           <statusUrl></statusUrl>
         </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
       </extensions>
