@@ -48,7 +48,7 @@
       <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
       <orgslist>openmicroscopy</orgslist>
       <cron>H/2 * * * *</cron>
-      <buildDescTemplate></buildDescTemplate>
+      <buildDescTemplate>PR #$pullId:  $abbrTitle</buildDescTemplate>
       <onlyTriggerPhrase>false</onlyTriggerPhrase>
       <useGitHubHooks>false</useGitHubHooks>
       <permitAll>false</permitAll>
