@@ -40,14 +40,14 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
     <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.29.8">
-      <spec>H/5 * * * *</spec>
+      <spec>H/2 * * * *</spec>
       <latestVersion>3</latestVersion>
       <triggerPhrase>Trigger build</triggerPhrase>
       <configVersion>3</configVersion>
       <adminlist>seanwarren imunro</adminlist>
       <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
       <orgslist>openmicroscopy</orgslist>
-      <cron>H/5 * * * *</cron>
+      <cron>H/2 * * * *</cron>
       <buildDescTemplate></buildDescTemplate>
       <onlyTriggerPhrase>false</onlyTriggerPhrase>
       <useGitHubHooks>false</useGitHubHooks>
@@ -65,7 +65,7 @@
       <gitHubAuthId>f0858a9a-5f4e-4833-827e-67b19ee0679d</gitHubAuthId>
       <extensions>
         <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
-          <commitStatusContext>CI server build</commitStatusContext>
+          <commitStatusContext>CI server</commitStatusContext>
           <triggeredStatus>Triggering build...</triggeredStatus>
           <startedStatus>Starting build...</startedStatus>
           <statusUrl></statusUrl>
