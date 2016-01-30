@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
-      <projectUrl>https://github.com/openmicroscopy/Imperial-FLIMfit/</projectUrl>
+      <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
@@ -14,7 +14,7 @@
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <refspec>+refs/pull/*:refs/remotes/origin/pr/*</refspec>
-        <url>https://github.com/openmicroscopy/Imperial-FLIMfit.git</url>
+        <url>https://github.com/imperial-photonics/FLIMfit.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -40,17 +40,17 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
     <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.29.8">
-      <spec>H/2 * * * *</spec>
+      <spec>H/5 * * * *</spec>
       <latestVersion>3</latestVersion>
       <triggerPhrase>Trigger build</triggerPhrase>
       <configVersion>3</configVersion>
       <adminlist>seanwarren imunro</adminlist>
       <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
       <orgslist>openmicroscopy</orgslist>
-      <cron>H/2 * * * *</cron>
+      <cron>H/5 * * * *</cron>
       <buildDescTemplate>PR #$pullId:  $abbrTitle</buildDescTemplate>
       <onlyTriggerPhrase>false</onlyTriggerPhrase>
-      <useGitHubHooks>false</useGitHubHooks>
+      <useGitHubHooks>true</useGitHubHooks>
       <permitAll>false</permitAll>
       <whitelist>seanwarren</whitelist>
       <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
