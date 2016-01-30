@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
-      <projectUrl>https://github.com/openmicroscopy/Imperial-FLIMfit/</projectUrl>
+      <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>b71786d8-4713-4ba8-b8e0-c6c140fa55b1</uuid>
+          <uuid>ca5de488-6c40-49bf-99b3-957486dff1bf</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -27,7 +27,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/openmicroscopy/Imperial-FLIMfit.git</url>
+        <url>https://github.com/imperial-photonics/FLIMfit.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
