@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
-      <projectUrl>https://github.com/openmicroscopy/Imperial-FLIMfit/</projectUrl>
+      <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
@@ -13,7 +13,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/openmicroscopy/Imperial-FLIMfit.git</url>
+        <url>https://github.com/imperial-photonics/FLIMfit.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -41,10 +41,6 @@
     <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.16.0">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
-    <hudson.triggers.SCMTrigger>
-      <spec>H/2 * * * *</spec>
-      <ignorePostCommitHooks>false</ignorePostCommitHooks>
-    </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
