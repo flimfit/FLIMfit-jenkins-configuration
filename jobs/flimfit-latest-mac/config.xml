@@ -55,7 +55,7 @@ PATH=$PATH:/usr/local/bin</propertiesContent>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
       <command>./Configure.sh
-rm /FLIMfitStandalone/BuiltApps
+rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null
 ./BuildFLIMfit.sh
 echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </hudson.tasks.Shell>
