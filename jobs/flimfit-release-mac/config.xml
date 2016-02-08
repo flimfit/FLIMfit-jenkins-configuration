@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>c501230f-3447-4a11-94c8-f5a7a0a9fa01</uuid>
+          <uuid>c0de2b90-73ef-4ee8-9810-15eabd7ea379</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -66,7 +66,6 @@ PATH=$PATH:/usr/local/bin</propertiesContent>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
       <command>./Configure.sh
-rm /FLIMfitStandalone/BuiltApps
 export VERSION=$TAGGED_VERSION
 ./BuildFLIMfit.sh</command>
     </hudson.tasks.Shell>
