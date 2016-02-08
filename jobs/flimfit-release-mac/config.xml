@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>5c225f74-5c8e-4a23-8435-d5f1374cfc7d</uuid>
+          <uuid>c501230f-3447-4a11-94c8-f5a7a0a9fa01</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
