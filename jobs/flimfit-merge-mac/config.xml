@@ -31,6 +31,7 @@
         <trackingSubmodules>false</trackingSubmodules>
         <reference></reference>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
+      <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
   <assignedNode>garvan-mac</assignedNode>
