@@ -77,7 +77,7 @@
   <builders>
     <EnvInjectBuilder plugin="envinject@1.92.1">
       <info>
-        <propertiesContent>OME=5.1
+        <propertiesContent>OME=5.2
 MSVC_VER=14
 BOOST_VER_MAJOR=1
 BOOST_VER_MINOR=59
