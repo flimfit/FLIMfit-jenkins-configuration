@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>ca5de488-6c40-49bf-99b3-957486dff1bf</uuid>
+          <uuid>c574aef2-a0e9-4db9-a44c-a28be17e92ed</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -38,7 +38,6 @@
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <submoduleCfg class="list"/>
     <extensions>
-      <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
       <hudson.plugins.git.extensions.impl.SubmoduleOption>
         <disableSubmodules>false</disableSubmodules>
         <recursiveSubmodules>true</recursiveSubmodules>
@@ -46,6 +45,7 @@
         <reference></reference>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <org.jenkinsci.plugins.gittagmessage.GitTagMessageExtension plugin="git-tag-message@1.4"/>
+      <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
   <assignedNode>garvan-win</assignedNode>
