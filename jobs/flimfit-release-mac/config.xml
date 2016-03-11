@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>5169524c-ab91-4d0a-8692-48d3156567ce</uuid>
+          <uuid>626a2011-b36d-41ad-806a-8e0c03443e29</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -57,7 +57,8 @@
   <builders>
     <EnvInjectBuilder plugin="envinject@1.92.1">
       <info>
-        <propertiesContent>OME=5.1
+        <propertiesContent>OME=5.2
+BIO=5.1
 BOOST_VER_MAJOR=1
 BOOST_VER_MINOR=59
 MATLAB_VER=R2015b
