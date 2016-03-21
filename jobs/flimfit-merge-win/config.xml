@@ -120,13 +120,6 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
-    <org.jenkinsci.plugins.ghprb.GhprbPullRequestMerge plugin="ghprb@1.31.2">
-      <onlyAdminsMerge>false</onlyAdminsMerge>
-      <disallowOwnCode>false</disallowOwnCode>
-      <mergeComment>Windows build artifacts available at ${JOB_URL}/${BUILD_NUMBER}/gcsObjects/</mergeComment>
-      <failOnNonMerge>false</failOnNonMerge>
-      <deleteOnMerge>false</deleteOnMerge>
-    </org.jenkinsci.plugins.ghprb.GhprbPullRequestMerge>
   </publishers>
   <buildWrappers>
     <org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus plugin="ghprb@1.31.2">
