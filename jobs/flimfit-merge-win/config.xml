@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.18.1">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -40,10 +40,9 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.29.8">
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.31.2">
       <spec>H/5 * * * *</spec>
       <latestVersion>3</latestVersion>
-      <triggerPhrase>Trigger build</triggerPhrase>
       <configVersion>3</configVersion>
       <adminlist>seanwarren imunro</adminlist>
       <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
@@ -61,15 +60,15 @@
           <branch></branch>
         </org.jenkinsci.plugins.ghprb.GhprbBranch>
       </whiteListTargetBranches>
-      <project>flimfit-merge-win</project>
-      <__project class="project" reference="../../.."/>
       <gitHubAuthId>f0858a9a-5f4e-4833-827e-67b19ee0679d</gitHubAuthId>
+      <triggerPhrase>Trigger build</triggerPhrase>
       <extensions>
         <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
           <commitStatusContext>CI server Windows build</commitStatusContext>
           <triggeredStatus>Triggering build...</triggeredStatus>
           <startedStatus>Started build...</startedStatus>
           <statusUrl></statusUrl>
+          <addTestResults>false</addTestResults>
         </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
       </extensions>
     </org.jenkinsci.plugins.ghprb.GhprbTrigger>
@@ -121,6 +120,26 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
+    <org.jenkinsci.plugins.ghprb.GhprbPullRequestMerge plugin="ghprb@1.31.2">
+      <onlyAdminsMerge>false</onlyAdminsMerge>
+      <disallowOwnCode>false</disallowOwnCode>
+      <mergeComment>Windows build artifacts available at ${JOB_URL}/${BUILD_NUMBER}/gcsObjects/</mergeComment>
+      <failOnNonMerge>false</failOnNonMerge>
+      <deleteOnMerge>false</deleteOnMerge>
+    </org.jenkinsci.plugins.ghprb.GhprbPullRequestMerge>
   </publishers>
-  <buildWrappers/>
+  <buildWrappers>
+    <org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus plugin="ghprb@1.31.2">
+      <commitStatusContext></commitStatusContext>
+      <triggeredStatus></triggeredStatus>
+      <startedStatus></startedStatus>
+      <statusUrl></statusUrl>
+      <completedStatus>
+        <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+          <message></message>
+          <result>SUCCESS</result>
+        </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+      </completedStatus>
+    </org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus>
+  </buildWrappers>
 </project>
