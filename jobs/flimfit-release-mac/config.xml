@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.18.1">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>626a2011-b36d-41ad-806a-8e0c03443e29</uuid>
+          <uuid>9a2658d3-5e66-46b0-9ae1-acdaf4c742c3</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -82,6 +82,14 @@ export VERSION=$TAGGED_VERSION
           <pathPrefix>FLIMfitStandalone/BuiltApps/</pathPrefix>
           <module/>
           <sourceGlobWithVars>FLIMfitStandalone/BuiltApps/*.zip</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE/libraries</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <pathPrefix>FLIMfitLibrary/Libraries/</pathPrefix>
+          <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
+          <sourceGlobWithVars>FLIMfitLibrary/Libraries/*.dylib</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
