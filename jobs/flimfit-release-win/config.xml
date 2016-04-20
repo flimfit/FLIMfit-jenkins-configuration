@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>bf92be2d-9d1c-4fb8-964c-e6a8c9585bcb</uuid>
+          <uuid>02b2f719-eda0-47ef-8f03-65727ef8f26c</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -92,7 +92,7 @@ BuildFLIMfit.bat</command>
           <sourceGlobWithVars>**/FLIMfitStandalone/Installer/*.exe</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE/libraries</bucketNameWithVars>
+          <bucketNameWithVars>gs://flimfit-downloads/latest/$TAGGED_VERISON/libraries</bucketNameWithVars>
           <sharedPublicly>false</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <pathPrefix>FLIMfitLibrary/Libraries/</pathPrefix>
