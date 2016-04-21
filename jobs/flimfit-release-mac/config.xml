@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>b9e6a7e2-8cab-4367-b10d-296d5305e66d</uuid>
+          <uuid>33048c27-762a-407d-bf02-151b4ce67e6a</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -84,7 +84,7 @@ export VERSION=$TAGGED_VERSION
           <sourceGlobWithVars>FLIMfitStandalone/BuiltApps/*.zip</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>gs://flimfit-downloads/latest/$TAGGED_VERSION/libraries</bucketNameWithVars>
+          <bucketNameWithVars>gs://flimfit-downloads/release/$TAGGED_VERSION/libraries</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <pathPrefix>FLIMfitLibrary/Libraries/</pathPrefix>
