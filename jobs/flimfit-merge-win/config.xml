@@ -121,18 +121,5 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
   </publishers>
-  <buildWrappers>
-    <org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus plugin="ghprb@1.31.2">
-      <commitStatusContext></commitStatusContext>
-      <triggeredStatus></triggeredStatus>
-      <startedStatus></startedStatus>
-      <statusUrl></statusUrl>
-      <completedStatus>
-        <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
-          <message></message>
-          <result>SUCCESS</result>
-        </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
-      </completedStatus>
-    </org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus>
-  </buildWrappers>
+  <buildWrappers/>
 </project>
