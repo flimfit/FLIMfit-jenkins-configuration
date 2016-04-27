@@ -23,9 +23,7 @@
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <submoduleCfg class="list"/>
-    <extensions>
-      <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
-    </extensions>
+    <extensions/>
   </scm>
   <assignedNode>master</assignedNode>
   <canRoam>false</canRoam>
@@ -41,7 +39,7 @@
   <builders>
     <hudson.tasks.Shell>
       <command>bundle install
-bundle exec jekyll</command>
+bundle exec jekyll clean build</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
