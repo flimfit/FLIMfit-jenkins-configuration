@@ -40,7 +40,8 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>jekyll build</command>
+      <command>bundle install
+bundle exec jekyll</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
