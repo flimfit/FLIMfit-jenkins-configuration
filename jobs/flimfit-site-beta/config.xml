@@ -39,7 +39,8 @@
   <builders>
     <hudson.tasks.Shell>
       <command>bundle install
-bundle exec jekyll clean build</command>
+bundle exec jekyll clean
+bundle exec jekyll build</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
