@@ -34,16 +34,12 @@
     <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.18.2">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
-    <hudson.triggers.SCMTrigger>
-      <spec>H/2 * * * *</spec>
-      <ignorePostCommitHooks>false</ignorePostCommitHooks>
-    </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
       <command>sphinx-build -v source build
-cp -R build /www/var/flimfit-docs</command>
+cp -R build /var/www/flimfit-docs</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
