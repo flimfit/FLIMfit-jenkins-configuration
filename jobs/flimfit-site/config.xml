@@ -43,7 +43,7 @@
       <command>bundle install
 bundle exec jekyll clean
 bundle exec jekyll build
-cp -R _site /www/flimfit-site
+cp -R _site var/www/flimfit-site
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
