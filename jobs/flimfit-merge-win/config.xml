@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.18.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.19.1">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.4">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -40,7 +40,7 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.31.2">
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.32.1">
       <spec>H/5 * * * *</spec>
       <latestVersion>3</latestVersion>
       <configVersion>3</configVersion>
@@ -62,6 +62,7 @@
       </whiteListTargetBranches>
       <gitHubAuthId>f0858a9a-5f4e-4833-827e-67b19ee0679d</gitHubAuthId>
       <triggerPhrase>Trigger build</triggerPhrase>
+      <skipBuildPhrase>.*\[skip\W+ci\].*</skipBuildPhrase>
       <extensions>
         <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
           <commitStatusContext>CI server Windows build</commitStatusContext>
@@ -78,7 +79,7 @@
     <EnvInjectBuilder plugin="envinject@1.92.1">
       <info>
         <propertiesContent>OME=5.2
-BIO=5.1
+BIO=5.2.0-m5
 MSVC_VER=14
 BOOST_VER_MAJOR=1
 BOOST_VER_MINOR=59
