@@ -4,26 +4,29 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.18.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.21.1">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
-        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
+        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.6.2">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>32371184-9731-41a9-a430-ffb011cc2bfd</uuid>
+          <uuid>81adc7b9-a96f-4588-bd19-be4796b78740</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
+          <branchFilter>.*</branchFilter>
           <sortMode>DESCENDING_SMART</sortMode>
           <defaultValue></defaultValue>
+          <selectedValue>TOP</selectedValue>
+          <quickFilterEnabled>false</quickFilterEnabled>
         </net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.5.3">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -44,7 +47,7 @@
         <trackingSubmodules>false</trackingSubmodules>
         <reference></reference>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
-      <org.jenkinsci.plugins.gittagmessage.GitTagMessageExtension plugin="git-tag-message@1.4"/>
+      <org.jenkinsci.plugins.gittagmessage.GitTagMessageExtension plugin="git-tag-message@1.5"/>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
@@ -59,7 +62,7 @@
     <EnvInjectBuilder plugin="envinject@1.92.1">
       <info>
         <propertiesContent>OME=5.2
-BIO=5.1
+BIO=5.2
 MSVC_VER=14
 BOOST_VER_MAJOR=1
 BOOST_VER_MINOR=59
