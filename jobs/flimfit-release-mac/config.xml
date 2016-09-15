@@ -4,26 +4,29 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.18.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.21.1">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
-        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.4.0">
+        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.6.2">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>33048c27-762a-407d-bf02-151b4ce67e6a</uuid>
+          <uuid>4d6da407-e4ba-42c8-a031-9a34148d891c</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
+          <branchFilter>.*</branchFilter>
           <sortMode>DESCENDING_SMART</sortMode>
           <defaultValue></defaultValue>
+          <selectedValue>TOP</selectedValue>
+          <quickFilterEnabled>false</quickFilterEnabled>
         </net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.5.3">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -58,7 +61,7 @@
     <EnvInjectBuilder plugin="envinject@1.92.1">
       <info>
         <propertiesContent>OME=5.2
-BIO=5.1
+BIO=5.2
 BOOST_VER_MAJOR=1
 BOOST_VER_MINOR=59
 MATLAB_VER=R2015b
