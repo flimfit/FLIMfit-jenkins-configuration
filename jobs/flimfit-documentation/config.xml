@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.21.1">
-      <projectUrl>https://github.com/seanwarren/FLIMfit-documentation/</projectUrl>
+      <projectUrl>https://github.com/flimfit/FLIMfit-documentation/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
@@ -13,7 +13,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/seanwarren/FLIMfit-documentation</url>
+        <url>https://github.com/flimfit/FLIMfit-documentation</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
