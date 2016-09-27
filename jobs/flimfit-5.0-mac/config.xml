@@ -54,12 +54,12 @@ MATLAB_VER=R2015b
 PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
-    <hudson.tasks.BatchFile>
-      <command>./Configure.sh&#xd;
-rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null&#xd;
-./BuildFLIMfit.sh&#xd;
+    <hudson.tasks.Shell>
+      <command>./Configure.sh
+rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null
+./BuildFLIMfit.sh
 echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
-    </hudson.tasks.BatchFile>
+    </hudson.tasks.Shell>
     <EnvInjectBuilder plugin="envinject@1.92.1">
       <info>
         <propertiesFilePath>git.properties</propertiesFilePath>
