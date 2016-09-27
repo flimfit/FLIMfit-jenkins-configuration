@@ -9,7 +9,7 @@
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.5.3">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -29,11 +29,12 @@
         <recursiveSubmodules>true</recursiveSubmodules>
         <trackingSubmodules>false</trackingSubmodules>
         <reference></reference>
+        <parentCredentials>false</parentCredentials>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
-  <assignedNode>garvan-win</assignedNode>
+  <assignedNode>garvan-mac</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -49,26 +50,15 @@
       <info>
         <propertiesContent>OME=5.2
 BIO=5.2
-MSVC_VER=14
-BOOST_VER_MAJOR=1
-BOOST_VER_MINOR=59
 MATLAB_VER=R2015b
-NO_ADMIN=true </propertiesContent>
+PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
-      <command>Configure.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
-      <command>GatherDependencies.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
-      <command>RMDIR FLIMfitStandalone /s /q&#xd;
-BuildFLIMfit.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
-      <command>FOR /F &quot;delims=&quot; %%i IN (&apos;git describe&apos;) DO set VERSION=%%i&#xd;
-ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
+      <command>./Configure.sh&#xd;
+rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null&#xd;
+./BuildFLIMfit.sh&#xd;
+echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </hudson.tasks.BatchFile>
     <EnvInjectBuilder plugin="envinject@1.92.1">
       <info>
@@ -84,9 +74,9 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
           <bucketNameWithVars>gs://flimfit-downloads/latest/${GIT_DESCRIBE}</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
-          <pathPrefix>FLIMfitStandalone/Installer/</pathPrefix>
+          <pathPrefix>FLIMfitStandalone/BuiltApps/</pathPrefix>
           <module/>
-          <sourceGlobWithVars>**/FLIMfitStandalone/Installer/*.exe</sourceGlobWithVars>
+          <sourceGlobWithVars>**/FLIMfitStandalone/BuiltApps/*.exe</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE/libraries</bucketNameWithVars>
@@ -94,7 +84,7 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
           <forFailedJobs>false</forFailedJobs>
           <pathPrefix>FLIMfitLibrary/Libraries/</pathPrefix>
           <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
-          <sourceGlobWithVars>FLIMfitLibrary/Libraries/*.dll</sourceGlobWithVars>
+          <sourceGlobWithVars>FLIMfitLibrary/Libraries/*.dylib</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
