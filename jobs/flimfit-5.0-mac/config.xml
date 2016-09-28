@@ -76,7 +76,7 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
           <forFailedJobs>false</forFailedJobs>
           <pathPrefix>FLIMfitStandalone/BuiltApps/</pathPrefix>
           <module/>
-          <sourceGlobWithVars>**/FLIMfitStandalone/BuiltApps/*.exe</sourceGlobWithVars>
+          <sourceGlobWithVars>**/FLIMfitStandalone/BuiltApps/*.zip</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE/libraries</bucketNameWithVars>
