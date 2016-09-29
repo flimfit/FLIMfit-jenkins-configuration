@@ -38,7 +38,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.BatchFile>
-      <command>&quot;C:\Program Files\MATLAB\R2015b\bin\matlab.exe&quot; -nosplash -nodesktop -wait -log compile_output.txt -r &quot;cd(&apos;%CD%&apos;); Compile; quit();&quot;&#xd;
+      <command>&quot;C:\Program Files\MATLAB\R2015b\bin\matlab.exe&quot; -nosplash -nodesktop -wait -log compile_output.txt -r &quot;cd(&apos;%CD%&apos;); Compile(true); quit();&quot;&#xd;
 </command>
     </hudson.tasks.BatchFile>
   </builders>
