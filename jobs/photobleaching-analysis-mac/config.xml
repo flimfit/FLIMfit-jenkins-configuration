@@ -38,7 +38,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>/Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodisplay -r &quot;Compile; quit();&quot;</command>
+      <command>/Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodisplay -r &quot;Compile(true); quit();&quot;</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
