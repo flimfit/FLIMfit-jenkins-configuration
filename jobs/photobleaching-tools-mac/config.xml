@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.21.1">
-      <projectUrl>https://github.com/timpsonlab/organotypic-invasion-scoring/</projectUrl>
+      <projectUrl>https://github.com/timpsonlab/photobleaching-analysis/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
@@ -13,12 +13,12 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/timpsonlab/organotypic-invasion-scoring</url>
+        <url>https://github.com/timpsonlab/photobleaching-analysis</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>*/master</name>
+        <name>*/develop</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -34,16 +34,11 @@
     <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.21.1">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
-    <hudson.triggers.SCMTrigger>
-      <spec>H/2 * * * *</spec>
-      <ignorePostCommitHooks>false</ignorePostCommitHooks>
-    </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd organotypic-invasion-scoring
-/Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodisplay -r &quot;Compile; quit();&quot;</command>
+      <command>/Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodisplay -r &quot;Compile; quit();&quot;</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -51,12 +46,12 @@
       <credentialsId>Timpson Lab</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>gs://timpson-lab/organotypic-invasion-scoring</bucketNameWithVars>
+          <bucketNameWithVars>gs://timpson-lab/photobleaching-analysis</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
-          <pathPrefix>organotypic-invasion-scoring/build/</pathPrefix>
+          <pathPrefix>build/</pathPrefix>
           <module/>
-          <sourceGlobWithVars>organotypic-invasion-scoring/build/*/*/*.dmg</sourceGlobWithVars>
+          <sourceGlobWithVars>build/*/*/*.dmg</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
