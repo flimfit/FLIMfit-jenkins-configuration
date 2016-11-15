@@ -92,6 +92,8 @@
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
         <string>organotypic-invasion-scoring-mac</string>
         <string>organotypic-invasion-scoring-win</string>
+        <string>photobleaching-analysis-mac</string>
+        <string>photobleaching-analysis-win</string>
         <string>shg-quantification-tools-mac</string>
         <string>shg-quantification-tools-win</string>
       </jobNames>
