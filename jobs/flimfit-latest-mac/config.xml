@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.22.3">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.23.1">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -40,13 +40,13 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.22.3">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.23.1">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@1.92.1">
+    <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
         <propertiesContent>OME=5.2
 BIO=5.2
@@ -62,7 +62,7 @@ rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null
 ./BuildFLIMfit.sh
 echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </hudson.tasks.Shell>
-    <EnvInjectBuilder plugin="envinject@1.92.1">
+    <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
         <propertiesFilePath>git.properties</propertiesFilePath>
       </info>
