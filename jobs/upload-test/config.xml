@@ -27,7 +27,7 @@
           <forFailedJobs>false</forFailedJobs>
           <showInline>true</showInline>
           <module/>
-          <sourceGlobWithVars>text.txt</sourceGlobWithVars>
+          <sourceGlobWithVars>test.txt</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
