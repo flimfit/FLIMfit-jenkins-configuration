@@ -18,14 +18,13 @@
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://flimfit-downloads/latest/test.txt</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
-          <showInline>true</showInline>
           <module/>
           <sourceGlobWithVars>test.txt</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
