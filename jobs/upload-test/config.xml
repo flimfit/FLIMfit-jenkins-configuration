@@ -14,7 +14,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cat &quot;test file&quot; &gt; test.txt</command>
+      <command>echo &quot;test file&quot; &gt; test.txt</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
