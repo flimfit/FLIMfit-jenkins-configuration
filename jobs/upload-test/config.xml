@@ -22,7 +22,7 @@
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>flimfit-downloads/latest/test.txt</bucketNameWithVars>
+          <bucketNameWithVars>gs://flimfit-downloads/latest/test.txt</bucketNameWithVars>
           <sharedPublicly>false</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <showInline>true</showInline>
