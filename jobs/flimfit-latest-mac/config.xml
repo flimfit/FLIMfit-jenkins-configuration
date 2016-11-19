@@ -77,7 +77,6 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <showInline>false</showInline>
-          <pathPrefix>FLIMfitStandalone/BuiltApps/</pathPrefix>
           <module/>
           <sourceGlobWithVars>FLIMfitStandalone/BuiltApps/*.zip</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
