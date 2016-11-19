@@ -23,7 +23,7 @@
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://flimfit-downloads/latest/test.txt</bucketNameWithVars>
-          <sharedPublicly>false</sharedPublicly>
+          <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <showInline>true</showInline>
           <module/>
