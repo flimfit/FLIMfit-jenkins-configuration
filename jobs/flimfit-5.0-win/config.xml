@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.21.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.23.1">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.5.3">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -29,6 +29,7 @@
         <recursiveSubmodules>true</recursiveSubmodules>
         <trackingSubmodules>false</trackingSubmodules>
         <reference></reference>
+        <parentCredentials>false</parentCredentials>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
@@ -39,21 +40,15 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.21.1">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.23.1">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@1.92.1">
+    <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
-        <propertiesContent>OME=5.2
-BIO=5.2
-MSVC_VER=14
-BOOST_VER_MAJOR=1
-BOOST_VER_MINOR=59
-MATLAB_VER=R2015b
-NO_ADMIN=true </propertiesContent>
+        <propertiesContent>NO_ADMIN=true </propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
@@ -70,7 +65,7 @@ BuildFLIMfit.bat</command>
       <command>FOR /F &quot;delims=&quot; %%i IN (&apos;git describe&apos;) DO set VERSION=%%i&#xd;
 ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
     </hudson.tasks.BatchFile>
-    <EnvInjectBuilder plugin="envinject@1.92.1">
+    <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
         <propertiesFilePath>git.properties</propertiesFilePath>
       </info>
