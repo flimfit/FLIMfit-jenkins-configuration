@@ -65,7 +65,8 @@ NO_ADMIN=true </propertiesContent>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
       <command>RMDIR FLIMfitStandalone /s /q&#xd;
-BuildFLIMfit.bat</command>
+BuildFLIMfit.bat&#xd;
+</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
       <command>FOR /F &quot;delims=&quot; %%i IN (&apos;git describe&apos;) DO set VERSION=%%i&#xd;
@@ -109,10 +110,17 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
       <hudsonHomeRelative>false</hudsonHomeRelative>
       <relativeTo>userContent</relativeTo>
     </com.michelin.cio.hudson.plugins.copytoslave.CopyToSlaveBuildWrapper>
-    <EnvInjectPasswordWrapper plugin="envinject@1.93.1">
-      <injectGlobalPasswords>false</injectGlobalPasswords>
-      <maskPasswordParameters>true</maskPasswordParameters>
-      <passwordEntries/>
-    </EnvInjectPasswordWrapper>
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.10">
+      <bindings>
+        <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+          <credentialsId>cert-password</credentialsId>
+          <variable>CERTPASS</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+        <org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+          <credentialsId>flimfit-cert</credentialsId>
+          <variable>CERTFILE</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+      </bindings>
+    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
   </buildWrappers>
 </project>
