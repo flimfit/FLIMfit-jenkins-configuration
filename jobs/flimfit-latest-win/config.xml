@@ -66,6 +66,7 @@ NO_ADMIN=true </propertiesContent>
     <hudson.tasks.BatchFile>
       <command>RMDIR FLIMfitStandalone /s /q&#xd;
 BuildFLIMfit.bat&#xd;
+SignInstaller.bat&#xd;
 </command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
