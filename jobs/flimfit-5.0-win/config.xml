@@ -62,6 +62,9 @@
 BuildFLIMfit.bat</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
+      <command>SignInstaller.bat</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
       <command>FOR /F &quot;delims=&quot; %%i IN (&apos;git describe&apos;) DO set VERSION=%%i&#xd;
 ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
     </hudson.tasks.BatchFile>
@@ -94,5 +97,18 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
   </publishers>
-  <buildWrappers/>
+  <buildWrappers>
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.10">
+      <bindings>
+        <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+          <credentialsId>cert-password</credentialsId>
+          <variable>CERTPASS</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+        <org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+          <credentialsId>flimfit-cert</credentialsId>
+          <variable>CERTFILE</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+      </bindings>
+    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+  </buildWrappers>
 </project>
