@@ -4,16 +4,16 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.21.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.23.1">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
-        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.6.2">
+        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.7.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>81adc7b9-a96f-4588-bd19-be4796b78740</uuid>
+          <uuid>1d3121e5-459a-4c55-af83-b4d6b6d70e9b</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -26,7 +26,7 @@
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.5.3">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -46,6 +46,7 @@
         <recursiveSubmodules>true</recursiveSubmodules>
         <trackingSubmodules>false</trackingSubmodules>
         <reference></reference>
+        <parentCredentials>false</parentCredentials>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <org.jenkinsci.plugins.gittagmessage.GitTagMessageExtension plugin="git-tag-message@1.5"/>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
@@ -59,7 +60,7 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@1.92.1">
+    <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
         <propertiesContent>OME=5.2
 BIO=5.2
@@ -72,6 +73,9 @@ NO_ADMIN=true </propertiesContent>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
       <command>Configure.bat</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
+      <command>SignInstaller.bat</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
       <command>GatherDependencies.bat</command>
@@ -105,5 +109,18 @@ BuildFLIMfit.bat</command>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
   </publishers>
-  <buildWrappers/>
+  <buildWrappers>
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.10">
+      <bindings>
+        <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+          <credentialsId>cert-password</credentialsId>
+          <variable>CERTPASS</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+        <org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+          <credentialsId>flimfit-cert</credentialsId>
+          <variable>CERTFILE</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+      </bindings>
+    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+  </buildWrappers>
 </project>
