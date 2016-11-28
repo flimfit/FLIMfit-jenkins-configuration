@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.7.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>1d3121e5-459a-4c55-af83-b4d6b6d70e9b</uuid>
+          <uuid>5839be50-cd0e-462c-ac1d-afea1dbd5d12</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -84,6 +84,9 @@ NO_ADMIN=true </propertiesContent>
       <command>set VERSION=%TAGGED_VERSION%&#xd;
 RMDIR FLIMfitStandalone /s /q&#xd;
 BuildFLIMfit.bat</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
+      <command>SignInstaller.bat</command>
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
