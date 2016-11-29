@@ -105,20 +105,20 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
     <jenkins.plugins.slack.SlackNotifier plugin="slack@2.1">
-      <teamDomain></teamDomain>
+      <teamDomain>flimfit</teamDomain>
       <authToken></authToken>
-      <authTokenCredentialId></authTokenCredentialId>
-      <room></room>
-      <startNotification>false</startNotification>
+      <authTokenCredentialId>slack-token</authTokenCredentialId>
+      <room>#general</room>
+      <startNotification>true</startNotification>
       <notifySuccess>true</notifySuccess>
-      <notifyAborted>false</notifyAborted>
+      <notifyAborted>true</notifyAborted>
       <notifyNotBuilt>true</notifyNotBuilt>
       <notifyUnstable>true</notifyUnstable>
       <notifyFailure>true</notifyFailure>
       <notifyBackToNormal>true</notifyBackToNormal>
       <notifyRepeatedFailure>false</notifyRepeatedFailure>
       <includeTestSummary>false</includeTestSummary>
-      <commitInfoChoice>NONE</commitInfoChoice>
+      <commitInfoChoice>AUTHORS_AND_TITLES</commitInfoChoice>
       <includeCustomMessage>false</includeCustomMessage>
       <customMessage></customMessage>
     </jenkins.plugins.slack.SlackNotifier>
