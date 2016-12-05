@@ -39,7 +39,7 @@
         <recursiveSubmodules>true</recursiveSubmodules>
         <trackingSubmodules>false</trackingSubmodules>
         <reference></reference>
-        <parentCredentials>true</parentCredentials>
+        <parentCredentials>false</parentCredentials>
         <timeout>30</timeout>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
