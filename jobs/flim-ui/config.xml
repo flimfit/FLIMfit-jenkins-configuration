@@ -48,6 +48,9 @@
     <hudson.tasks.BatchFile>
       <command>build-flim-ui.bat</command>
     </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
+      <command>sign-installer.bat</command>
+    </hudson.tasks.BatchFile>
   </builders>
   <publishers>
     <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
@@ -64,5 +67,18 @@
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
   </publishers>
-  <buildWrappers/>
+  <buildWrappers>
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.10">
+      <bindings>
+        <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+          <credentialsId>cert-password</credentialsId>
+          <variable>CERTPASS</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+        <org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+          <credentialsId>flimfit-cert</credentialsId>
+          <variable>CERTFILE</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+      </bindings>
+    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+  </buildWrappers>
 </project>
