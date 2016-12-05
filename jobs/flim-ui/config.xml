@@ -8,8 +8,8 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>git@github.com:seanwarren/flim-ui</url>
-        <credentialsId>flimfit-bot-ssh</credentialsId>
+        <url>https://github.com/seanwarren/flim-ui</url>
+        <credentialsId>flimfit-bot github</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -39,7 +39,7 @@
         <recursiveSubmodules>true</recursiveSubmodules>
         <trackingSubmodules>false</trackingSubmodules>
         <reference></reference>
-        <parentCredentials>false</parentCredentials>
+        <parentCredentials>true</parentCredentials>
         <timeout>30</timeout>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
