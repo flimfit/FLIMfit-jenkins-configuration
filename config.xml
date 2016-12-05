@@ -3,6 +3,7 @@
   <disabledAdministrativeMonitors>
     <string>jenkins.security.s2m.MasterKillSwitchWarning</string>
     <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
+    <string>GitHubHookRegisterProblemMonitor</string>
   </disabledAdministrativeMonitors>
   <version>2.34</version>
   <numExecutors>2</numExecutors>
