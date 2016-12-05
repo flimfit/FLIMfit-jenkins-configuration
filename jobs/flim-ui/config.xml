@@ -49,6 +49,20 @@
       <command>build-flim-ui.bat</command>
     </hudson.tasks.BatchFile>
   </builders>
-  <publishers/>
+  <publishers>
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
+      <credentialsId>FLIMfit</credentialsId>
+      <uploads>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://flimfit-downloads/</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <pathPrefix>Build/*/</pathPrefix>
+          <module/>
+          <sourceGlobWithVars>Build/*/*.exe</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
+      </uploads>
+    </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
+  </publishers>
   <buildWrappers/>
 </project>
