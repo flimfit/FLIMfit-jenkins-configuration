@@ -57,9 +57,9 @@
           <bucketNameWithVars>gs://flimfit-downloads/</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
-          <pathPrefix>Build/*/</pathPrefix>
+          <pathPrefix>Build/</pathPrefix>
           <module/>
-          <sourceGlobWithVars>Build/*/*.exe</sourceGlobWithVars>
+          <sourceGlobWithVars>Build/*.exe</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
