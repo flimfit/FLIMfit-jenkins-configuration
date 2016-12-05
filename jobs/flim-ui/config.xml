@@ -23,6 +23,17 @@
     </browser>
     <submoduleCfg class="list"/>
     <extensions>
+      <hudson.plugins.git.extensions.impl.CloneOption>
+        <shallow>false</shallow>
+        <noTags>false</noTags>
+        <reference></reference>
+        <timeout>30</timeout>
+        <depth>0</depth>
+        <honorRefspec>false</honorRefspec>
+      </hudson.plugins.git.extensions.impl.CloneOption>
+      <hudson.plugins.git.extensions.impl.CheckoutOption>
+        <timeout>30</timeout>
+      </hudson.plugins.git.extensions.impl.CheckoutOption>
       <hudson.plugins.git.extensions.impl.SubmoduleOption>
         <disableSubmodules>false</disableSubmodules>
         <recursiveSubmodules>true</recursiveSubmodules>
@@ -32,9 +43,6 @@
         <timeout>30</timeout>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
-      <hudson.plugins.git.extensions.impl.CheckoutOption>
-        <timeout>30</timeout>
-      </hudson.plugins.git.extensions.impl.CheckoutOption>
     </extensions>
   </scm>
   <assignedNode>garvan-win</assignedNode>
