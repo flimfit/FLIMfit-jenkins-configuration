@@ -19,7 +19,7 @@
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <browser class="hudson.plugins.git.browser.GithubWeb">
-      <url></url>
+      <url>https://github.com/seanwarren/flim-ui</url>
     </browser>
     <submoduleCfg class="list"/>
     <extensions>
