@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.22.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.24.0">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -41,7 +41,7 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.33.1">
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.33.2">
       <spec>H/2 * * * *</spec>
       <latestVersion>3</latestVersion>
       <configVersion>3</configVersion>
@@ -69,6 +69,7 @@
       <gitHubAuthId>f0858a9a-5f4e-4833-827e-67b19ee0679d</gitHubAuthId>
       <triggerPhrase>Trigger build</triggerPhrase>
       <skipBuildPhrase>.*\[skip\W+ci\].*</skipBuildPhrase>
+      <labelsIgnoreList></labelsIgnoreList>
       <extensions>
         <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
           <commitStatusContext>CI server Mac build</commitStatusContext>
@@ -82,7 +83,7 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@1.92.1">
+    <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
         <propertiesContent>OME=5.2
 BIO=5.2
@@ -98,7 +99,7 @@ rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null
 ./BuildFLIMfit.sh
 echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </hudson.tasks.Shell>
-    <EnvInjectBuilder plugin="envinject@1.92.1">
+    <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
         <propertiesFilePath>git.properties</propertiesFilePath>
       </info>
@@ -118,6 +119,24 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
+    <jenkins.plugins.slack.SlackNotifier plugin="slack@2.1">
+      <teamDomain>flimfit</teamDomain>
+      <authToken></authToken>
+      <authTokenCredentialId>slack-token</authTokenCredentialId>
+      <room>#build</room>
+      <startNotification>false</startNotification>
+      <notifySuccess>true</notifySuccess>
+      <notifyAborted>true</notifyAborted>
+      <notifyNotBuilt>true</notifyNotBuilt>
+      <notifyUnstable>true</notifyUnstable>
+      <notifyFailure>true</notifyFailure>
+      <notifyBackToNormal>true</notifyBackToNormal>
+      <notifyRepeatedFailure>false</notifyRepeatedFailure>
+      <includeTestSummary>true</includeTestSummary>
+      <commitInfoChoice>AUTHORS_AND_TITLES</commitInfoChoice>
+      <includeCustomMessage>false</includeCustomMessage>
+      <customMessage></customMessage>
+    </jenkins.plugins.slack.SlackNotifier>
   </publishers>
   <buildWrappers/>
 </project>
