@@ -108,8 +108,8 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
       <teamDomain>flimfit</teamDomain>
       <authToken></authToken>
       <authTokenCredentialId>slack-token</authTokenCredentialId>
-      <room>#general</room>
-      <startNotification>true</startNotification>
+      <room>#build</room>
+      <startNotification>false</startNotification>
       <notifySuccess>true</notifySuccess>
       <notifyAborted>true</notifyAborted>
       <notifyNotBuilt>true</notifyNotBuilt>
