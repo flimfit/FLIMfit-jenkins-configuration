@@ -94,7 +94,7 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
       <teamDomain>flimfit</teamDomain>
       <authToken></authToken>
       <authTokenCredentialId>slack-token</authTokenCredentialId>
-      <room>#general</room>
+      <room>#build</room>
       <startNotification>false</startNotification>
       <notifySuccess>true</notifySuccess>
       <notifyAborted>true</notifyAborted>
