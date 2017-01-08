@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.24.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.25.0">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -41,7 +41,7 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.33.2">
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.33.4">
       <spec>H/2 * * * *</spec>
       <latestVersion>3</latestVersion>
       <configVersion>3</configVersion>
@@ -69,7 +69,6 @@
       <gitHubAuthId>f0858a9a-5f4e-4833-827e-67b19ee0679d</gitHubAuthId>
       <triggerPhrase>Trigger build</triggerPhrase>
       <skipBuildPhrase>.*\[skip\W+ci\].*</skipBuildPhrase>
-      <labelsIgnoreList></labelsIgnoreList>
       <extensions>
         <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
           <commitStatusContext>CI server Mac build</commitStatusContext>
