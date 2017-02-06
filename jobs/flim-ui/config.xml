@@ -57,7 +57,7 @@
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>gs://flimfit-downloads/flim-ui/</bucketNameWithVars>
+          <bucketNameWithVars>gs://flimfit-downloads/flim-ui</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <pathPrefix>Build/</pathPrefix>
