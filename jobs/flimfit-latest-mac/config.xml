@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.24.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.25.0">
       <projectUrl>https://github.com/imperial-photonics/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -40,7 +40,7 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.24.0">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.25.0">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
   </triggers>
@@ -102,7 +102,7 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
       <notifyUnstable>true</notifyUnstable>
       <notifyFailure>true</notifyFailure>
       <notifyBackToNormal>true</notifyBackToNormal>
-      <notifyRepeatedFailure>false</notifyRepeatedFailure>
+      <notifyRepeatedFailure>true</notifyRepeatedFailure>
       <includeTestSummary>false</includeTestSummary>
       <commitInfoChoice>AUTHORS_AND_TITLES</commitInfoChoice>
       <includeCustomMessage>false</includeCustomMessage>
