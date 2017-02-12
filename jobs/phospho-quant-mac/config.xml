@@ -43,7 +43,7 @@
   <builders>
     <hudson.tasks.Shell>
       <command>cd organotypic-invasion-scoring
-/Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodisplay -r &quot;Compile; quit();&quot;</command>
+/Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodisplay -r &quot;compile; quit();&quot;</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
