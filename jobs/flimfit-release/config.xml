@@ -9,7 +9,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.7.1">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>1d49e277-554a-4357-9e05-e578c177abed</uuid>
+          <uuid>e1f764c3-e936-493c-99dd-76119a86925d</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -26,7 +26,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/imperial-photonics/FLIMfit.git</url>
+        <url>https://github.com/flimfit/FLIMfit.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
