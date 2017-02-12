@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.25.0">
-      <projectUrl>https://github.com/timpsonlab/organotypic-invasion-scoring/</projectUrl>
+      <projectUrl>https://github.com/seanwarren/phospho-quant/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
@@ -13,7 +13,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/timpsonlab/organotypic-invasion-scoring</url>
+        <url>https://github.com/seanwarren/phospho-quant/</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -52,12 +52,12 @@
       <credentialsId>Timpson Lab</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>gs://timpson-lab/organotypic-invasion-scoring</bucketNameWithVars>
+          <bucketNameWithVars>gs://timpson-lab/phospho-quant</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
-          <pathPrefix>organotypic-invasion-scoring/build/</pathPrefix>
+          <pathPrefix>build/</pathPrefix>
           <module/>
-          <sourceGlobWithVars>organotypic-invasion-scoring/build/*/*/*.exe</sourceGlobWithVars>
+          <sourceGlobWithVars>build/*/*/*.exe</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
