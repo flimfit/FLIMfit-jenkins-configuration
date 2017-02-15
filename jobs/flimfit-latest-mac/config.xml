@@ -52,7 +52,7 @@
 BIO=5.2
 BOOST_VER_MAJOR=1
 BOOST_VER_MINOR=59
-MATLAB_VER=R2015b
+MATLAB_VER=R2016b
 PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
