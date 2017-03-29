@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.25.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.26.1">
       <projectUrl>https://github.com/flimfit/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.1.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -41,7 +41,7 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.33.4">
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.35.0">
       <spec>H/2 * * * *</spec>
       <latestVersion>3</latestVersion>
       <configVersion>3</configVersion>
@@ -69,6 +69,8 @@
       <gitHubAuthId>f0858a9a-5f4e-4833-827e-67b19ee0679d</gitHubAuthId>
       <triggerPhrase>Trigger build</triggerPhrase>
       <skipBuildPhrase>.*\[skip\W+ci\].*</skipBuildPhrase>
+      <blackListLabels></blackListLabels>
+      <whiteListLabels></whiteListLabels>
       <extensions>
         <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
           <commitStatusContext>CI server Mac build</commitStatusContext>
@@ -84,11 +86,7 @@
   <builders>
     <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
-        <propertiesContent>OME=5.2
-BIO=5.2
-BOOST_VER_MAJOR=1
-BOOST_VER_MINOR=59
-MATLAB_VER=R2015b
+        <propertiesContent>MATLAB_VER=R2016b
 PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
@@ -118,20 +116,24 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
-    <jenkins.plugins.slack.SlackNotifier plugin="slack@2.1">
+    <jenkins.plugins.slack.SlackNotifier plugin="slack@2.2">
+      <baseUrl></baseUrl>
       <teamDomain>flimfit</teamDomain>
       <authToken></authToken>
       <authTokenCredentialId>slack-token</authTokenCredentialId>
+      <botUser>false</botUser>
       <room>#build</room>
       <startNotification>false</startNotification>
       <notifySuccess>true</notifySuccess>
       <notifyAborted>true</notifyAborted>
       <notifyNotBuilt>true</notifyNotBuilt>
       <notifyUnstable>true</notifyUnstable>
+      <notifyRegression>false</notifyRegression>
       <notifyFailure>true</notifyFailure>
       <notifyBackToNormal>true</notifyBackToNormal>
       <notifyRepeatedFailure>false</notifyRepeatedFailure>
       <includeTestSummary>true</includeTestSummary>
+      <includeFailedTests>false</includeFailedTests>
       <commitInfoChoice>AUTHORS_AND_TITLES</commitInfoChoice>
       <includeCustomMessage>false</includeCustomMessage>
       <customMessage></customMessage>
