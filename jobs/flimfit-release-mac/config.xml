@@ -4,16 +4,16 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.25.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.26.1">
       <projectUrl>https://github.com/flimfit/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
-        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.7.1">
+        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.8.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>d3ee7dec-6687-49e6-8a15-f404590a1e47</uuid>
+          <uuid>1ca7d9f7-bebb-4ffc-a258-653a5eedd7b7</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -26,7 +26,7 @@
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.1.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -61,11 +61,7 @@
   <builders>
     <EnvInjectBuilder plugin="envinject@1.93.1">
       <info>
-        <propertiesContent>OME=5.2
-BIO=5.2
-BOOST_VER_MAJOR=1
-BOOST_VER_MINOR=59
-MATLAB_VER=R2015b
+        <propertiesContent>MATLAB_VER=R2016b
 PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
