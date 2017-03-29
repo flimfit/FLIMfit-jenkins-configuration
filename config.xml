@@ -9,7 +9,7 @@
   <numExecutors>2</numExecutors>
   <mode>EXCLUSIVE</mode>
   <useSecurity>true</useSecurity>
-  <authorizationStrategy class="org.jenkinsci.plugins.GithubAuthorizationStrategy" plugin="github-oauth@0.24">
+  <authorizationStrategy class="org.jenkinsci.plugins.GithubAuthorizationStrategy" plugin="github-oauth@0.25">
     <rootACL>
       <organizationNameList class="linked-list">
         <string>openmicroscopy</string>
@@ -30,7 +30,7 @@
     <githubWebUri>https://github.com</githubWebUri>
     <githubApiUri>https://api.github.com</githubApiUri>
     <clientID>8b3d364f7c8bcfd1c983</clientID>
-    <clientSecret>V0oaJWY+L306itirb26MLhb1NGGZjAbwYtDWZNUDD3k1Sttrpg8xkSfZyaHEBXFtrdovoCJZqrQCGjFqOM5kUw==</clientSecret>
+    <clientSecret>{AQAAABAAAAAwbZwBL+txDhwA/95/ZcAEmKOx7f8z4A0s8Nkb1pSqsCvYvtG2TSc+4bthg36R4u5yyEGg36DnshdkxrlTNdFXOQ==}</clientSecret>
     <oauthScopes>read:org,user:email</oauthScopes>
   </securityRealm>
   <disableRememberMe>false</disableRememberMe>
@@ -47,7 +47,7 @@
   <views>
     <hudson.model.AllView>
       <owner class="hudson" reference="../../.."/>
-      <name>All</name>
+      <name>all</name>
       <description>Build Server for FLIMfit and Timpson Lab projects</description>
       <filterExecutors>false</filterExecutors>
       <filterQueue>false</filterQueue>
@@ -111,7 +111,7 @@
       <recurse>false</recurse>
     </listView>
   </views>
-  <primaryView>All</primaryView>
+  <primaryView>all</primaryView>
   <slaveAgentPort>0</slaveAgentPort>
   <label>master</label>
   <nodeProperties/>
