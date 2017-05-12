@@ -4,7 +4,7 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.26.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.27.0">
       <projectUrl>https://github.com/flimfit/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.8.0">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>1ca7d9f7-bebb-4ffc-a258-653a5eedd7b7</uuid>
+          <uuid>640ef9a3-849c-4bc7-871f-4d4fbbc1a32d</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -26,7 +26,7 @@
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.1.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -59,7 +59,7 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@1.93.1">
+    <EnvInjectBuilder plugin="envinject@2.0">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
 PATH=$PATH:/usr/local/bin</propertiesContent>
@@ -67,18 +67,20 @@ PATH=$PATH:/usr/local/bin</propertiesContent>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
       <command>./Configure.sh
+security unlock-keychain -p $keychain_password
 export VERSION=$TAGGED_VERSION
 ./BuildFLIMfit.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.13">
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://flimfit-downloads/release/$TAGGED_VERSION</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
           <pathPrefix>FLIMfitStandalone/BuiltApps/</pathPrefix>
           <module/>
           <sourceGlobWithVars>FLIMfitStandalone/BuiltApps/*.zip</sourceGlobWithVars>
@@ -87,6 +89,7 @@ export VERSION=$TAGGED_VERSION
           <bucketNameWithVars>gs://flimfit-downloads/release/$TAGGED_VERSION/libraries</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
           <pathPrefix>FLIMfitLibrary/Libraries/</pathPrefix>
           <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
           <sourceGlobWithVars>FLIMfitLibrary/Libraries/*.dylib</sourceGlobWithVars>
@@ -94,5 +97,16 @@ export VERSION=$TAGGED_VERSION
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
   </publishers>
-  <buildWrappers/>
+  <buildWrappers>
+    <EnvInjectPasswordWrapper plugin="envinject@2.0">
+      <injectGlobalPasswords>false</injectGlobalPasswords>
+      <maskPasswordParameters>true</maskPasswordParameters>
+      <passwordEntries>
+        <EnvInjectPasswordEntry>
+          <name>keychain_password</name>
+          <value>{AQAAABAAAAAQFKf2YT8FOEZuY8sN7EOVVObX2asaKW40RBF3FpjpbFs=}</value>
+        </EnvInjectPasswordEntry>
+      </passwordEntries>
+    </EnvInjectPasswordWrapper>
+  </buildWrappers>
 </project>
