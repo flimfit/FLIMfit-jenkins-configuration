@@ -55,7 +55,7 @@ PATH=$PATH:/usr/local/bin</propertiesContent>
     <hudson.tasks.Shell>
       <command>./Configure.sh
 rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null
-security unlock-keychain -p $keychain-pass
+security unlock-keychain -p $keychain_password
 ./BuildFLIMfit.sh 
 echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </hudson.tasks.Shell>
@@ -117,7 +117,7 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
       <bindings>
         <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
           <credentialsId>keychain password</credentialsId>
-          <variable>keychain-pass</variable>
+          <variable>keychain_password</variable>
         </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
       </bindings>
     </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
