@@ -121,14 +121,7 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
           <name>keychain_password</name>
           <value>{AQAAABAAAAAQXIAI6nqYE5V5d/0/zq5KJnnSNMi3VZeaEefSRcu2cTo=}</value>
         </EnvInjectPasswordEntry>
-        <EnvInjectPasswordEntry>
-          <name></name>
-          <value>{AQAAABAAAAAQ8SG8+5QOsDA53sHkpY0m32/BNmHDrnlK46L1jktMbS4=}</value>
-        </EnvInjectPasswordEntry>
       </passwordEntries>
     </EnvInjectPasswordWrapper>
-    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.11">
-      <bindings class="empty-list"/>
-    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
   </buildWrappers>
 </project>
