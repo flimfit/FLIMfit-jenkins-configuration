@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.16.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.27.0">
       <projectUrl>https://github.com/timpsonlab/shg-quantification-tools/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -42,19 +42,20 @@
   <builders>
     <hudson.tasks.Shell>
       <command>cd shg-quantification-tools
-/Applications/MATLAB_R2015b.app/bin/matlab -nosplash -nodisplay -r &quot;Compile; quit();&quot;
+/Applications/MATLAB_R2016b.app/bin/matlab -nosplash -nodisplay -r &quot;Compile; quit();&quot;
 
 </command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.13">
       <credentialsId>Timpson Lab</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://timpson-lab/shg-quantification-tools</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
           <pathPrefix>shg-quantification-tools/build/</pathPrefix>
           <module/>
           <sourceGlobWithVars>shg-quantification-tools/build/*/*/*.dmg</sourceGlobWithVars>
