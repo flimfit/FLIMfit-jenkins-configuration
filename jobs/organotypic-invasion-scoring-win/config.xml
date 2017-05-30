@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.18.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.27.0">
       <projectUrl>https://github.com/timpsonlab/organotypic-invasion-scoring/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -31,7 +31,7 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.18.1">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.27.0">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
     <hudson.triggers.SCMTrigger>
@@ -43,18 +43,19 @@
   <builders>
     <hudson.tasks.BatchFile>
       <command>cd organotypic-invasion-scoring&#xd;
-&quot;C:\Program Files\MATLAB\R2015b\bin\matlab.exe&quot; -nosplash -nodesktop -wait -log compile_output.txt -r &quot;cd(&apos;%CD%&apos;); Compile; quit();&quot;&#xd;
+&quot;C:\Program Files\MATLAB\R2016b\bin\matlab.exe&quot; -nosplash -nodesktop -wait -log compile_output.txt -r &quot;cd(&apos;%CD%&apos;); Compile; quit();&quot;&#xd;
 </command>
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.13">
       <credentialsId>Timpson Lab</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://timpson-lab/organotypic-invasion-scoring</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
           <pathPrefix>organotypic-invasion-scoring/build/</pathPrefix>
           <module/>
           <sourceGlobWithVars>organotypic-invasion-scoring/build/*/*/*.exe</sourceGlobWithVars>
