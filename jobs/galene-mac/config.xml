@@ -46,7 +46,8 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>./build-flim-ui.sh</command>
+      <command>echo $PATH
+./build-flim-ui.sh</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>./create-dmg.sh</command>
