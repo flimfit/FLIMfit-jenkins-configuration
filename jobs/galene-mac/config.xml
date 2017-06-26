@@ -47,6 +47,7 @@
   <builders>
     <hudson.tasks.Shell>
       <command>echo $PATH
+security unlock-keychain -p $keychain_password
 ./build-flim-ui.sh</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
@@ -70,6 +71,16 @@
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
   </publishers>
   <buildWrappers>
+    <EnvInjectPasswordWrapper plugin="envinject@2.1">
+      <injectGlobalPasswords>false</injectGlobalPasswords>
+      <maskPasswordParameters>true</maskPasswordParameters>
+      <passwordEntries>
+        <EnvInjectPasswordEntry>
+          <name>keychain_password</name>
+          <value>{AQAAABAAAAAQY+LDJNLzlcI5IXlZCrNTLlfu2dDeISSSnK1ItXP1J9M=}</value>
+        </EnvInjectPasswordEntry>
+      </passwordEntries>
+    </EnvInjectPasswordWrapper>
     <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.11">
       <bindings class="empty-list"/>
     </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
