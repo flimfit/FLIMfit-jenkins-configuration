@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hudson.plugins.git.GitSCM_-DescriptorImpl plugin="git@3.0.1">
-  <generation>96</generation>
+<hudson.plugins.git.GitSCM_-DescriptorImpl plugin="git@3.3.0">
+  <generation>98</generation>
   <globalConfigName>FLIMfit Bot</globalConfigName>
   <globalConfigEmail>bot@flimfit.org</globalConfigEmail>
   <createAccountBasedOnEmail>true</createAccountBasedOnEmail>
