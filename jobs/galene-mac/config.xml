@@ -72,14 +72,9 @@ security unlock-keychain -p $keychain_password
   </publishers>
   <buildWrappers>
     <EnvInjectPasswordWrapper plugin="envinject@2.1">
-      <injectGlobalPasswords>false</injectGlobalPasswords>
+      <injectGlobalPasswords>true</injectGlobalPasswords>
       <maskPasswordParameters>true</maskPasswordParameters>
-      <passwordEntries>
-        <EnvInjectPasswordEntry>
-          <name>keychain_password</name>
-          <value>{AQAAABAAAAAQY+LDJNLzlcI5IXlZCrNTLlfu2dDeISSSnK1ItXP1J9M=}</value>
-        </EnvInjectPasswordEntry>
-      </passwordEntries>
+      <passwordEntries/>
     </EnvInjectPasswordWrapper>
     <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.11">
       <bindings class="empty-list"/>
