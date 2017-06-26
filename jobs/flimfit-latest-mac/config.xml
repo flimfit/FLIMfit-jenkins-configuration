@@ -46,7 +46,7 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@2.0">
+    <EnvInjectBuilder plugin="envinject@2.1">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
 PATH=$PATH:/usr/local/bin</propertiesContent>
@@ -59,7 +59,7 @@ security unlock-keychain -p $keychain_password
 ./BuildFLIMfit.sh 
 echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </hudson.tasks.Shell>
-    <EnvInjectBuilder plugin="envinject@2.0">
+    <EnvInjectBuilder plugin="envinject@2.1">
       <info>
         <propertiesFilePath>git.properties</propertiesFilePath>
       </info>
@@ -113,15 +113,10 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </jenkins.plugins.slack.SlackNotifier>
   </publishers>
   <buildWrappers>
-    <EnvInjectPasswordWrapper plugin="envinject@2.0">
-      <injectGlobalPasswords>false</injectGlobalPasswords>
+    <EnvInjectPasswordWrapper plugin="envinject@2.1">
+      <injectGlobalPasswords>true</injectGlobalPasswords>
       <maskPasswordParameters>true</maskPasswordParameters>
-      <passwordEntries>
-        <EnvInjectPasswordEntry>
-          <name>keychain_password</name>
-          <value>{AQAAABAAAAAQXIAI6nqYE5V5d/0/zq5KJnnSNMi3VZeaEefSRcu2cTo=}</value>
-        </EnvInjectPasswordEntry>
-      </passwordEntries>
+      <passwordEntries/>
     </EnvInjectPasswordWrapper>
   </buildWrappers>
 </project>
