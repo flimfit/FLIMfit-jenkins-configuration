@@ -8,7 +8,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/seanwarren/galene</url>
+        <url>https://github.com/seanwarren/Galene</url>
         <credentialsId>flimfit-bot github</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
@@ -19,7 +19,7 @@
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <browser class="hudson.plugins.git.browser.GithubWeb">
-      <url>https://github.com/seanwarren/galene</url>
+      <url>https://github.com/seanwarren/Galene</url>
     </browser>
     <submoduleCfg class="list"/>
     <extensions>
