@@ -61,6 +61,7 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>flimfit-6-latest-win</string>
         <string>flimfit-documentation</string>
         <string>flimfit-latest-mac</string>
         <string>flimfit-latest-win</string>
