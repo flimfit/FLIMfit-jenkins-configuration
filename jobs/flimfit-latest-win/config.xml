@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.26.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.28.0">
       <projectUrl>https://github.com/flimfit/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.1.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.5.1">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -34,19 +34,19 @@
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
-  <assignedNode>garvan-win</assignedNode>
+  <assignedNode>garvan-win-10</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.26.1">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.28.0">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@1.93.1">
+    <EnvInjectBuilder plugin="envinject@2.1.3">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
 NO_ADMIN=true </propertiesContent>
@@ -71,20 +71,21 @@ BuildFLIMfit.bat&#xd;
       <command>FOR /F &quot;delims=&quot; %%i IN (&apos;git describe&apos;) DO set VERSION=%%i&#xd;
 ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
     </hudson.tasks.BatchFile>
-    <EnvInjectBuilder plugin="envinject@1.93.1">
+    <EnvInjectBuilder plugin="envinject@2.1.3">
       <info>
         <propertiesFilePath>git.properties</propertiesFilePath>
       </info>
     </EnvInjectBuilder>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10-SNAPSHOT">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.13">
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://flimfit-downloads/latest/${GIT_DESCRIBE}</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
           <pathPrefix>FLIMfitStandalone/Installer/</pathPrefix>
           <module/>
           <sourceGlobWithVars>**/FLIMfitStandalone/Installer/*.exe</sourceGlobWithVars>
@@ -93,6 +94,7 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
           <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE/libraries</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
           <pathPrefix>FLIMfitLibrary/Libraries/</pathPrefix>
           <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
           <sourceGlobWithVars>FLIMfitLibrary/Libraries/*.dll</sourceGlobWithVars>
@@ -123,7 +125,7 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
     </jenkins.plugins.slack.SlackNotifier>
   </publishers>
   <buildWrappers>
-    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.10">
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.13">
       <bindings>
         <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
           <credentialsId>cert-password</credentialsId>
