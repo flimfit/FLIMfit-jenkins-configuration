@@ -49,7 +49,7 @@
     <EnvInjectBuilder plugin="envinject@2.1.3">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
-NO_ADMIN=true </propertiesContent>
+NOADMIN=true </propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
