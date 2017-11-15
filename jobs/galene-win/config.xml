@@ -46,6 +46,10 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.BatchFile>
+      <command>&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat&quot; x64&#xd;
+build-libs.bat</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
       <command>build-flim-ui.bat</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
