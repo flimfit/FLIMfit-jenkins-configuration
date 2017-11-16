@@ -46,7 +46,9 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.BatchFile>
-      <command>&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat&quot; x64&#xd;
+      <command>set CURDIR=%cd%&#xd;
+&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat&quot; x64&#xd;
+cd %CURDIR%&#xd;
 build-libs.bat</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
