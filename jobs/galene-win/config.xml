@@ -47,7 +47,8 @@
   <builders>
     <hudson.tasks.BatchFile>
       <command>set CURDIR=%cd%&#xd;
-&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat&quot; x64&#xd;
+set path=%path:&quot;=%&#xd;
+call &quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat&quot; x64&#xd;
 echo %CURDIR%&#xd;
 cd %CURDIR%&#xd;
 build-libs.bat</command>
