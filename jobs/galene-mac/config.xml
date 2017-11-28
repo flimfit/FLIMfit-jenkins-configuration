@@ -33,7 +33,7 @@
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
-  <assignedNode>garvan-mac</assignedNode>
+  <assignedNode>garvan-mac-el-capitan</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
