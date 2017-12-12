@@ -48,13 +48,9 @@
   <builders>
     <EnvInjectBuilder plugin="envinject@2.1.3">
       <info>
-        <propertiesContent>MATLAB_VER=R2016b
-NO_ADMIN=true </propertiesContent>
+        <propertiesContent>MATLAB_VER=R2016b</propertiesContent>
       </info>
     </EnvInjectBuilder>
-    <hudson.tasks.BatchFile>
-      <command>Configure.bat</command>
-    </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
       <command>GatherDependencies.bat</command>
     </hudson.tasks.BatchFile>
