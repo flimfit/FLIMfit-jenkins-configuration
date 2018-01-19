@@ -35,7 +35,7 @@
       <data class="concurrent-hash-map">
         <entry>
           <string>galene-mac</string>
-          <boolean>false</boolean>
+          <boolean>true</boolean>
         </entry>
       </data>
     </hudson.plugins.favorite.user.FavoriteUserProperty>
