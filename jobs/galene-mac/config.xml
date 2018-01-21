@@ -48,7 +48,6 @@
     <hudson.tasks.Shell>
       <command>export PATH=/Developer/NVIDIA/CUDA-8.0/bin/:${PATH}
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/bin:${DYLD_LIBRARY_PATH}
-security unlock-keychain -p $keychain_password
 ./build-libs.sh
 ./build-flim-ui.sh</command>
     </hudson.tasks.Shell>
