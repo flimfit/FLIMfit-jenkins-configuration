@@ -45,6 +45,9 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.BatchFile>
+      <command>sign-installer.bat</command>
+    </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
       <command>build-libs.bat</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
@@ -52,9 +55,6 @@
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
       <command>build-flim-ui.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
-      <command>sign-installer.bat</command>
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
