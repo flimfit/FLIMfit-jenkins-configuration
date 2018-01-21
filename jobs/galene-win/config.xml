@@ -45,7 +45,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.BatchFile>
-      <command>build-libs.bat</command>
+      <command>echo TEST</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
       <command>build-flim-ui.bat</command>
