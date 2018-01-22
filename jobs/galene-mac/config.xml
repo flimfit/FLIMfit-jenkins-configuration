@@ -30,7 +30,6 @@
         <reference></reference>
         <parentCredentials>true</parentCredentials>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
-      <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
   <assignedNode>garvan-mac-el-capitan</assignedNode>
@@ -49,6 +48,7 @@
       <command>export PATH=/Developer/NVIDIA/CUDA-8.0/bin/:${PATH}
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/bin:${DYLD_LIBRARY_PATH}
 ./build-libs.sh
+rm -rf Build
 ./build-flim-ui.sh</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
