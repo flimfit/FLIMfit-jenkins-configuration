@@ -49,6 +49,7 @@
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/bin:${DYLD_LIBRARY_PATH}
 ./build-libs.sh
 rm -rf Build
+rm -f *.dmg
 ./build-flim-ui.sh</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
