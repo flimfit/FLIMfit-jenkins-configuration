@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jenkins.plugins.slack.webhook.GlobalConfig plugin="slack@2.3">
   <slackOutgoingWebhookToken>yubt5g4NoxQM034zUe0WIqxm</slackOutgoingWebhookToken>
-  <slackOutgoingWebhookURL>http://ci.flimfit.org/webhook/</slackOutgoingWebhookURL>
+  <slackOutgoingWebhookURL>https://ci.flimfit.org/webhook/</slackOutgoingWebhookURL>
 </jenkins.plugins.slack.webhook.GlobalConfig>
