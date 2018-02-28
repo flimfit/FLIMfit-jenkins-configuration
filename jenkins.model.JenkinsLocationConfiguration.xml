@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jenkins.model.JenkinsLocationConfiguration>
   <adminAddress>s.warren@garvan.org.au</adminAddress>
-  <jenkinsUrl>http://ci.flimfit.org/</jenkinsUrl>
+  <jenkinsUrl>https://ci.flimfit.org/</jenkinsUrl>
 </jenkins.model.JenkinsLocationConfiguration>
