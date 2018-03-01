@@ -24,7 +24,6 @@
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <submoduleCfg class="list"/>
     <extensions>
-      <hudson.plugins.git.extensions.impl.WipeWorkspace/>
       <hudson.plugins.git.extensions.impl.SubmoduleOption>
         <disableSubmodules>false</disableSubmodules>
         <recursiveSubmodules>true</recursiveSubmodules>
@@ -54,9 +53,7 @@ PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
-      <command>export PATH=/Developer/NVIDIA/CUDA-8.0/bin/:${PATH}
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/bin:${DYLD_LIBRARY_PATH}
-./Configure.sh
+      <command>./Configure.sh
 rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null
 security unlock-keychain -p $keychain_password
 ./BuildFLIMfit.sh 
