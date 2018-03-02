@@ -5,7 +5,7 @@
     <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
     <string>GitHubHookRegisterProblemMonitor</string>
   </disabledAdministrativeMonitors>
-  <version>2.102</version>
+  <version>2.109</version>
   <installState class="jenkins.install.InstallState$5">
     <isSetupComplete>true</isSetupComplete>
     <name>RESTART</name>
@@ -34,7 +34,7 @@
     <githubWebUri>https://github.com</githubWebUri>
     <githubApiUri>https://api.github.com</githubApiUri>
     <clientID>8b3d364f7c8bcfd1c983</clientID>
-    <clientSecret>{AQAAABAAAAAwgrk3NcCgZfawdZVGMSAj0EO+eiplG3QFDNe1pHsnmjimnnrGKLh49GoaQsPHeN6yxXu5dmZBZspBm+mdeN2cKg==}</clientSecret>
+    <clientSecret>{AQAAABAAAAAwFtMHvyzASlSvxPQr57xVT3d61K7ECdbZCKRR1PBG8ktk2YFdS3+J9zsRSu8d3SlLGr1Y+UmYnaUyZEkMBeLWvw==}</clientSecret>
     <oauthScopes>read:org,user:email</oauthScopes>
   </securityRealm>
   <disableRememberMe>false</disableRememberMe>
