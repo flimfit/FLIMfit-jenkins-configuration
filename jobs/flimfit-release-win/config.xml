@@ -1,19 +1,19 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.1' encoding='UTF-8'?>
 <project>
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.28.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
       <projectUrl>https://github.com/flimfit/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
-        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.8.0">
+        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.9.1">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>4cf5fbfa-67e5-4e84-adc5-9dbeb3a37987</uuid>
+          <uuid>fcd537df-2e44-41ec-8a8f-9c1e0f628bd5</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -26,7 +26,7 @@
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.5.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -48,7 +48,9 @@
         <reference></reference>
         <parentCredentials>false</parentCredentials>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
-      <org.jenkinsci.plugins.gittagmessage.GitTagMessageExtension plugin="git-tag-message@1.5"/>
+      <org.jenkinsci.plugins.gittagmessage.GitTagMessageExtension plugin="git-tag-message@1.6.1">
+        <useMostRecentTag>false</useMostRecentTag>
+      </org.jenkinsci.plugins.gittagmessage.GitTagMessageExtension>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
@@ -60,7 +62,7 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@2.1.3">
+    <EnvInjectBuilder plugin="envinject@2.1.5">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
 NO_ADMIN=true </propertiesContent>
@@ -85,7 +87,7 @@ BuildFLIMfit.bat</command>
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.13">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.1">
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
@@ -110,16 +112,12 @@ BuildFLIMfit.bat</command>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
   </publishers>
   <buildWrappers>
-    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.13">
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.15">
       <bindings>
         <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
-          <credentialsId>cert-password</credentialsId>
-          <variable>CERTPASS</variable>
+          <credentialsId>smartcard-pin</credentialsId>
+          <variable>SMARTCARDPIN</variable>
         </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
-        <org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
-          <credentialsId>flimfit-cert</credentialsId>
-          <variable>CERTFILE</variable>
-        </org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
       </bindings>
     </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
   </buildWrappers>
