@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.9.1">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>cf6032b0-1f6f-4520-b3cb-d455a9997bb8</uuid>
+          <uuid>c0a8937d-0fc7-4c07-b364-005d97885d78</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -66,9 +66,7 @@ PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
-      <command>export PATH=/Developer/NVIDIA/CUDA-8.0/bin/:${PATH}
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/bin:${DYLD_LIBRARY_PATH}
-./Configure.sh
+      <command>./Configure.sh
 security unlock-keychain -p $keychain_password
 export VERSION=$TAGGED_VERSION
 ./BuildFLIMfit.sh</command>
