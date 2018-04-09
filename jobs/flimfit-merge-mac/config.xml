@@ -93,9 +93,7 @@ PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
-      <command>export PATH=/Developer/NVIDIA/CUDA-8.0/bin/:${PATH}
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/bin:${DYLD_LIBRARY_PATH}
-./Configure.sh
+      <command>./Configure.sh
 rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null
 ./BuildFLIMfit.sh
 echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
