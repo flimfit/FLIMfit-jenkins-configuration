@@ -64,7 +64,7 @@
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <showInline>false</showInline>
-          <pathPrefix>latest/</pathPrefix>
+          <pathPrefix>target/</pathPrefix>
           <module/>
           <sourceGlobWithVars>target/*.jar</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
