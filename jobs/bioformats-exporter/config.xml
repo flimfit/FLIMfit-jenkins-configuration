@@ -59,15 +59,6 @@
     <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.1">
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
-        <com.google.jenkins.plugins.storage.StdoutUpload>
-          <bucketNameWithVars></bucketNameWithVars>
-          <sharedPublicly>false</sharedPublicly>
-          <forFailedJobs>true</forFailedJobs>
-          <showInline>false</showInline>
-          <pathPrefix>target/</pathPrefix>
-          <module/>
-          <logName>build-log.txt</logName>
-        </com.google.jenkins.plugins.storage.StdoutUpload>
         <com.google.jenkins.plugins.storage.ClassicUpload>
           <bucketNameWithVars>gs://flimfit-downloads/bioformats-exporter</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
@@ -75,7 +66,7 @@
           <showInline>false</showInline>
           <pathPrefix>latest/</pathPrefix>
           <module/>
-          <sourceGlobWithVars>latest/*.jar</sourceGlobWithVars>
+          <sourceGlobWithVars>target/*.jar</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
