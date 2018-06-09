@@ -1,8 +1,14 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@3.1.2">
+  <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
+      <projectUrl>https://github.com/flimfit/bioformats-exporter/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
@@ -26,6 +32,7 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
+  <goals>clean install</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
@@ -47,13 +54,23 @@
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.StdoutUpload>
-          <bucketNameWithVars>gs://</bucketNameWithVars>
+          <bucketNameWithVars></bucketNameWithVars>
           <sharedPublicly>false</sharedPublicly>
           <forFailedJobs>true</forFailedJobs>
           <showInline>false</showInline>
+          <pathPrefix>target/</pathPrefix>
           <module/>
           <logName>build-log.txt</logName>
         </com.google.jenkins.plugins.storage.StdoutUpload>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://flimfit-downloads/bioformats-exporter</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
+          <pathPrefix>latest/</pathPrefix>
+          <module/>
+          <sourceGlobWithVars>latest/*.jar</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
   </publishers>
