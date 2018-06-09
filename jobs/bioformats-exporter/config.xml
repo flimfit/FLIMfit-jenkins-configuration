@@ -33,7 +33,12 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
+  <rootModule>
+    <groupId>bioformats-exporter</groupId>
+    <artifactId>bioformats-exporter</artifactId>
+  </rootModule>
   <goals>clean install</goals>
+  <defaultGoals>install</defaultGoals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
