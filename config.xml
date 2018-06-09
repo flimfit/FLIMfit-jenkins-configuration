@@ -5,10 +5,8 @@
     <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
     <string>GitHubHookRegisterProblemMonitor</string>
   </disabledAdministrativeMonitors>
-  <version>2.116</version>
-  <installState class="jenkins.install.InstallState$Restart">
-    <name>RESTART</name>
-  </installState>
+  <version>2.126</version>
+  <installStateName>RESTART</installStateName>
   <numExecutors>2</numExecutors>
   <mode>EXCLUSIVE</mode>
   <useSecurity>true</useSecurity>
