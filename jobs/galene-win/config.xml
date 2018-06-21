@@ -53,6 +53,9 @@
     <hudson.tasks.BatchFile>
       <command>build-flim-ui.bat</command>
     </hudson.tasks.BatchFile>
+    <hudson.tasks.BatchFile>
+      <command>sign-installer.bat</command>
+    </hudson.tasks.BatchFile>
   </builders>
   <publishers>
     <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.1">
