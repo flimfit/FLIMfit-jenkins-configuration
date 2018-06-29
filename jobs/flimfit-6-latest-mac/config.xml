@@ -1,0 +1,122 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
+      <projectUrl>https://github.com/flimfit/FLIMfit/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/flimfit/FLIMfit.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.SubmoduleOption>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>true</recursiveSubmodules>
+        <trackingSubmodules>false</trackingSubmodules>
+        <reference></reference>
+        <parentCredentials>false</parentCredentials>
+      </hudson.plugins.git.extensions.impl.SubmoduleOption>
+      <hudson.plugins.git.extensions.impl.CleanCheckout/>
+    </extensions>
+  </scm>
+  <assignedNode>garvan-mac-el-capitan</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.0">
+      <spec></spec>
+    </com.cloudbees.jenkins.GitHubPushTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <EnvInjectBuilder plugin="envinject@2.1.5">
+      <info>
+        <propertiesContent>MATLAB_VER=R2016b
+PATH=$PATH:/usr/local/bin</propertiesContent>
+      </info>
+    </EnvInjectBuilder>
+    <hudson.tasks.Shell>
+      <command>./Configure.sh
+rm -rf FLIMfitStandalone/BuiltApps/* 2&gt; /dev/null
+security unlock-keychain -p $keychain_password
+./BuildFLIMfit.sh 
+echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
+    </hudson.tasks.Shell>
+    <EnvInjectBuilder plugin="envinject@2.1.5">
+      <info>
+        <propertiesFilePath>git.properties</propertiesFilePath>
+      </info>
+    </EnvInjectBuilder>
+  </builders>
+  <publishers>
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.1">
+      <credentialsId>FLIMfit</credentialsId>
+      <uploads>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
+          <pathPrefix>FLIMfitStandalone/BuiltApps/</pathPrefix>
+          <module/>
+          <sourceGlobWithVars>FLIMfitStandalone/BuiltApps/*.zip</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE/libraries</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
+          <pathPrefix>FLIMfitFrontEnd/DeployLibraries/</pathPrefix>
+          <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
+          <sourceGlobWithVars>FLIMfitFrontEnd/DeployLibraries/*.zip</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
+      </uploads>
+    </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
+    <jenkins.plugins.slack.SlackNotifier plugin="slack@2.3">
+      <baseUrl></baseUrl>
+      <teamDomain>flimfit</teamDomain>
+      <authToken></authToken>
+      <authTokenCredentialId>slack-token</authTokenCredentialId>
+      <botUser>false</botUser>
+      <room>#build</room>
+      <startNotification>false</startNotification>
+      <notifySuccess>true</notifySuccess>
+      <notifyAborted>true</notifyAborted>
+      <notifyNotBuilt>true</notifyNotBuilt>
+      <notifyUnstable>true</notifyUnstable>
+      <notifyRegression>false</notifyRegression>
+      <notifyFailure>true</notifyFailure>
+      <notifyBackToNormal>true</notifyBackToNormal>
+      <notifyRepeatedFailure>true</notifyRepeatedFailure>
+      <includeTestSummary>false</includeTestSummary>
+      <includeFailedTests>false</includeFailedTests>
+      <commitInfoChoice>AUTHORS_AND_TITLES</commitInfoChoice>
+      <includeCustomMessage>false</includeCustomMessage>
+      <customMessage></customMessage>
+    </jenkins.plugins.slack.SlackNotifier>
+  </publishers>
+  <buildWrappers>
+    <EnvInjectPasswordWrapper plugin="envinject@2.1.5">
+      <injectGlobalPasswords>true</injectGlobalPasswords>
+      <maskPasswordParameters>true</maskPasswordParameters>
+      <passwordEntries/>
+    </EnvInjectPasswordWrapper>
+  </buildWrappers>
+</project>
