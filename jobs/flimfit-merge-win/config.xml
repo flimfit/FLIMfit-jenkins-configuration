@@ -158,7 +158,7 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
       <bindings>
         <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
           <credentialsId>smartcard-pin</credentialsId>
-          <variable>SMARCARDPIN</variable>
+          <variable>SMARTCARDPIN</variable>
         </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
       </bindings>
     </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
