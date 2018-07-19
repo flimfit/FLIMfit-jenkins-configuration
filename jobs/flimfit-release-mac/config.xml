@@ -13,7 +13,7 @@
         <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.9.1">
           <name>TAGGED_VERSION</name>
           <description></description>
-          <uuid>c0a8937d-0fc7-4c07-b364-005d97885d78</uuid>
+          <uuid>1413668e-9f79-4182-afc9-b49ef2592ba3</uuid>
           <type>PT_TAG</type>
           <branch>master</branch>
           <tagFilter>*</tagFilter>
@@ -62,7 +62,8 @@
     <EnvInjectBuilder plugin="envinject@2.1.5">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
-PATH=$PATH:/usr/local/bin</propertiesContent>
+PATH=$PATH:/usr/local/bin
+MKLROOT=/opt/intel/mkl</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
