@@ -49,7 +49,8 @@
     <EnvInjectBuilder plugin="envinject@2.1.5">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
-PATH=$PATH:/usr/local/bin</propertiesContent>
+PATH=$PATH:/usr/local/bin
+MKLROOT=/opt/intel/mkl</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
