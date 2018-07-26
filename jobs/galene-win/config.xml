@@ -54,7 +54,7 @@
       <command>build-flim-ui.bat</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
-      <command>sign-installer.bat</command>
+      <command>REM sign-installer.bat</command>
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
