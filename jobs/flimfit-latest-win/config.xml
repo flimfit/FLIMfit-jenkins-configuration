@@ -53,12 +53,6 @@ NOADMIN=true </propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
-      <command>Configure.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
-      <command>GatherDependencies.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
       <command>RMDIR FLIMfitStandalone /s /q&#xd;
 BuildFLIMfit.bat&#xd;
 &#xd;
@@ -125,7 +119,7 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
     </jenkins.plugins.slack.SlackNotifier>
   </publishers>
   <buildWrappers>
-    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.15">
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.16">
       <bindings>
         <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
           <credentialsId>smartcard-pin</credentialsId>
