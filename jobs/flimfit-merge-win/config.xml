@@ -93,12 +93,6 @@ NO_ADMIN=true </propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
-      <command>Configure.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
-      <command>GatherDependencies.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
       <command>RMDIR FLIMfitStandalone /s /q&#xd;
 BuildFLIMfit.bat</command>
     </hudson.tasks.BatchFile>
