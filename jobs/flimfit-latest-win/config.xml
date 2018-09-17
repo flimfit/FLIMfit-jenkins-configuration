@@ -59,9 +59,6 @@ BuildFLIMfit.bat&#xd;
 </command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
-      <command>SignInstaller.bat</command>
-    </hudson.tasks.BatchFile>
-    <hudson.tasks.BatchFile>
       <command>FOR /F &quot;delims=&quot; %%i IN (&apos;git describe&apos;) DO set VERSION=%%i&#xd;
 ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
     </hudson.tasks.BatchFile>
