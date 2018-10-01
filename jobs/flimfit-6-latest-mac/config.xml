@@ -48,8 +48,7 @@
   <builders>
     <EnvInjectBuilder plugin="envinject@2.1.5">
       <info>
-        <propertiesContent>MATLAB_VER=R2016b
-PATH=$PATH:/usr/local/bin</propertiesContent>
+        <propertiesContent>PATH=$PATH:/usr/local/bin</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
