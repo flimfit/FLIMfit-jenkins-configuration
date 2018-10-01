@@ -47,9 +47,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <EnvInjectBuilder plugin="envinject@2.1.5">
-      <info>
-        <propertiesContent>MATLAB_VER=R2016b</propertiesContent>
-      </info>
+      <info/>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
       <command>RMDIR FLIMfitStandalone /s /q&#xd;
