@@ -50,8 +50,7 @@
       <info/>
     </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
-      <command>RMDIR FLIMfitStandalone /s /q&#xd;
-BuildFLIMfit.bat&#xd;
+      <command>BuildFLIMfit.bat&#xd;
 &#xd;
 </command>
     </hudson.tasks.BatchFile>
