@@ -46,9 +46,6 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@2.1.6">
-      <info/>
-    </EnvInjectBuilder>
     <hudson.tasks.BatchFile>
       <command>BuildFLIMfit.bat&#xd;
 &#xd;
