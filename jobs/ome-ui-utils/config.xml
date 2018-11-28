@@ -41,7 +41,7 @@
     <groupId>ome</groupId>
     <artifactId>OMEuiUtils</artifactId>
   </rootModule>
-  <goals>clean jar</goals>
+  <goals>clean install -Dmaven.javadoc.skip=true</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
