@@ -38,11 +38,10 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <rootModule>
-    <groupId>bioformats-exporter</groupId>
-    <artifactId>bioformats-exporter</artifactId>
+    <groupId>ome</groupId>
+    <artifactId>OMEuiUtils</artifactId>
   </rootModule>
   <goals>clean install</goals>
-  <defaultGoals>install</defaultGoals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
