@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.2">
-      <projectUrl>https://github.com/flimfit/bioformats-exporter/</projectUrl>
+      <projectUrl>https://github.com/flimfit/omeUiUtils/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
@@ -13,7 +13,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/flimfit/bioformats-exporter</url>
+        <url>https://github.com/flimfit/omeUiUtils</url>
         <credentialsId>flimfit-bot github</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
@@ -31,7 +31,11 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
+  <triggers>
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.2">
+      <spec></spec>
+    </com.cloudbees.jenkins.GitHubPushTrigger>
+  </triggers>
   <concurrentBuild>false</concurrentBuild>
   <rootModule>
     <groupId>bioformats-exporter</groupId>
@@ -60,7 +64,7 @@
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
-          <bucketNameWithVars>gs://flimfit-downloads/bioformats-exporter</bucketNameWithVars>
+          <bucketNameWithVars>gs://flimfit-downloads/ome-ui-utils</bucketNameWithVars>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <showInline>false</showInline>
