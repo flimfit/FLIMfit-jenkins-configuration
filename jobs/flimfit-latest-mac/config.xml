@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.2">
       <projectUrl>https://github.com/flimfit/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.1">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -40,13 +40,13 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.0">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.2">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@2.1.5">
+    <EnvInjectBuilder plugin="envinject@2.1.6">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
 PATH=$PATH:/usr/local/bin
@@ -60,14 +60,14 @@ security unlock-keychain -p $keychain_password
 ./BuildFLIMfit.sh 
 echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </hudson.tasks.Shell>
-    <EnvInjectBuilder plugin="envinject@2.1.5">
+    <EnvInjectBuilder plugin="envinject@2.1.6">
       <info>
         <propertiesFilePath>git.properties</propertiesFilePath>
       </info>
     </EnvInjectBuilder>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.1">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.2">
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
@@ -84,9 +84,9 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <showInline>false</showInline>
-          <pathPrefix>FLIMfitFrontEnd/DeployLibraries/</pathPrefix>
+          <pathPrefix>FLIMfitFrontEnd/</pathPrefix>
           <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
-          <sourceGlobWithVars>FLIMfitFrontEnd/DeployLibraries/*.zip</sourceGlobWithVars>
+          <sourceGlobWithVars>FLIMfitFrontEnd/flimfit_libraries*.zip</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
@@ -114,7 +114,7 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
     </jenkins.plugins.slack.SlackNotifier>
   </publishers>
   <buildWrappers>
-    <EnvInjectPasswordWrapper plugin="envinject@2.1.5">
+    <EnvInjectPasswordWrapper plugin="envinject@2.1.6">
       <injectGlobalPasswords>true</injectGlobalPasswords>
       <maskPasswordParameters>true</maskPasswordParameters>
       <passwordEntries/>
