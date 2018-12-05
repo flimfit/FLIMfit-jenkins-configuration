@@ -86,6 +86,15 @@ echo GIT_DESCRIBE=$(git describe) &gt; git.properties</command>
           <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
           <sourceGlobWithVars>FLIMfitFrontEnd/DeployLibraries/*.zip</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
+        <com.google.jenkins.plugins.storage.ClassicUpload>
+          <bucketNameWithVars>gs://flimfit-downloads/latest/$GIT_DESCRIBE/libraries</bucketNameWithVars>
+          <sharedPublicly>true</sharedPublicly>
+          <forFailedJobs>false</forFailedJobs>
+          <showInline>false</showInline>
+          <pathPrefix>FLIMfitFrontEnd/</pathPrefix>
+          <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
+          <sourceGlobWithVars>FLIMfitFrontEnd/flimfit_libraries*.zip</sourceGlobWithVars>
+        </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
     <jenkins.plugins.slack.SlackNotifier plugin="slack@2.3">
