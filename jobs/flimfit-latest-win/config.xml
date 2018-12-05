@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.2">
       <projectUrl>https://github.com/flimfit/FLIMfit/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.1">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -40,13 +40,13 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.0">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.2">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <EnvInjectBuilder plugin="envinject@2.1.5">
+    <EnvInjectBuilder plugin="envinject@2.1.6">
       <info>
         <propertiesContent>MATLAB_VER=R2016b
 NOADMIN=true </propertiesContent>
@@ -62,14 +62,14 @@ BuildFLIMfit.bat&#xd;
       <command>FOR /F &quot;delims=&quot; %%i IN (&apos;git describe&apos;) DO set VERSION=%%i&#xd;
 ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
     </hudson.tasks.BatchFile>
-    <EnvInjectBuilder plugin="envinject@2.1.5">
+    <EnvInjectBuilder plugin="envinject@2.1.6">
       <info>
         <propertiesFilePath>git.properties</propertiesFilePath>
       </info>
     </EnvInjectBuilder>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.1">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.2">
       <credentialsId>FLIMfit</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
@@ -86,9 +86,9 @@ ECHO GIT_DESCRIBE=%VERSION% &gt; git.properties</command>
           <sharedPublicly>true</sharedPublicly>
           <forFailedJobs>false</forFailedJobs>
           <showInline>false</showInline>
-          <pathPrefix>FLIMfitLibrary/Libraries/</pathPrefix>
+          <pathPrefix>FLIMfitFrontEnd/</pathPrefix>
           <module reference="../../com.google.jenkins.plugins.storage.ClassicUpload/module"/>
-          <sourceGlobWithVars>FLIMfitLibrary/Libraries/*.dll</sourceGlobWithVars>
+          <sourceGlobWithVars>FLIMfitFrontEnd/flimfit_libraries*.zip</sourceGlobWithVars>
         </com.google.jenkins.plugins.storage.ClassicUpload>
       </uploads>
     </com.google.jenkins.plugins.storage.GoogleCloudStorageUploader>
