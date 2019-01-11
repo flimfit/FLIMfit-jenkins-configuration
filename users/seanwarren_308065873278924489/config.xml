@@ -39,7 +39,7 @@
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.21">
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.23">
       <emailAddress>sean.warren09@imperial.ac.uk</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
     <io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty plugin="blueocean-autofavorite@1.2.2">
@@ -53,11 +53,11 @@
         </entry>
       </data>
     </hudson.plugins.favorite.user.FavoriteUserProperty>
-    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@2.2.0">
+    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@2.3.0">
       <providerId>default</providerId>
     </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
     <org.jenkinsci.plugins.GithubAccessTokenProperty plugin="github-oauth@0.29">
-      <accessToken>{AQAAABAAAAAwJKY7t3I6vGjAZMxcMqUM1yk3jTwGgdC0iudZ545a45d6k7GQpnX7LbV6r8mfjqAoSNY2ShdPdJ6A+bSR1kjp1A==}</accessToken>
+      <accessToken>{AQAAABAAAAAwXu1Y90iaJUCC02AEz8bLpXbGWFLpyrzaeUNxi9n8ZHUxlZNaOwyn2xTAHZ/pLTGNczFbgNgcBB+RX6lIpCBsag==}</accessToken>
     </org.jenkinsci.plugins.GithubAccessTokenProperty>
   </properties>
 </user>
