@@ -57,7 +57,7 @@
       <providerId>default</providerId>
     </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
     <org.jenkinsci.plugins.GithubAccessTokenProperty plugin="github-oauth@0.29">
-      <accessToken>{AQAAABAAAAAw/XXsSpWg171QpetzqHxbAAXFrWDXBiwIDeQ6qdks/p15Sui8RVk+YUbFKqW2Ei15INxIToRplhtY/fJPT3fnXA==}</accessToken>
+      <accessToken>{AQAAABAAAAAw4lRhvd3sylhDMnvgG0OcLxmzVgWGczCvBlxhWp6w4n/xSu+n6cVcsAExPHRSCEFPm77pRUDqyzRwrjg5IU4plw==}</accessToken>
     </org.jenkinsci.plugins.GithubAccessTokenProperty>
   </properties>
 </user>
