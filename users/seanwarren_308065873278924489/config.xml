@@ -42,7 +42,7 @@
     <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.23">
       <emailAddress>sean.warren09@imperial.ac.uk</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
-    <io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty plugin="blueocean-autofavorite@1.2.2">
+    <io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty plugin="blueocean-autofavorite@1.2.3">
       <autofavoriteEnabled>true</autofavoriteEnabled>
     </io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty>
     <hudson.plugins.favorite.user.FavoriteUserProperty plugin="favorite@2.3.2">
@@ -59,8 +59,8 @@
     <jenkins.security.seed.UserSeedProperty>
       <seed>0fcb3ea887a22c36</seed>
     </jenkins.security.seed.UserSeedProperty>
-    <org.jenkinsci.plugins.GithubAccessTokenProperty plugin="github-oauth@0.29">
-      <accessToken>{AQAAABAAAAAwDU1FQ39lltZEjBkPvJ9+uaHPQ/n+ltdHiTVzPDpsVeSkmhragoiYIx7EeXgmTNRWAYENNCqE7feMbEswo3oV8Q==}</accessToken>
+    <org.jenkinsci.plugins.GithubAccessTokenProperty plugin="github-oauth@0.31">
+      <accessToken>{AQAAABAAAAAwjL3S6Ndl2L2J/pDCSjWHlVBZp8Aq0fkvq4T3w3TnSAOMlU5fPT5VzeRuaNTKnkT5OGP7EW+6Ri8gIvlh2ElpEg==}</accessToken>
     </org.jenkinsci.plugins.GithubAccessTokenProperty>
   </properties>
 </user>
