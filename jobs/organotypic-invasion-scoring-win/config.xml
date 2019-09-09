@@ -4,12 +4,12 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.3">
       <projectUrl>https://github.com/timpsonlab/organotypic-invasion-scoring/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.3">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -25,13 +25,13 @@
     <submoduleCfg class="list"/>
     <extensions/>
   </scm>
-  <assignedNode>garvan-win-10</assignedNode>
+  <assignedNode>garvan-win10-2</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.0">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.3">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
     <hudson.triggers.SCMTrigger>
@@ -48,7 +48,7 @@
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.1">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@1.2">
       <credentialsId>Timpson Lab</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ClassicUpload>
