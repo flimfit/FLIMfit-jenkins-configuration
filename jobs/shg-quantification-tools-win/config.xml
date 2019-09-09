@@ -24,10 +24,17 @@
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <submoduleCfg class="list"/>
     <extensions>
+      <hudson.plugins.git.extensions.impl.SubmoduleOption>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>true</recursiveSubmodules>
+        <trackingSubmodules>false</trackingSubmodules>
+        <reference></reference>
+        <parentCredentials>false</parentCredentials>
+      </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
     </extensions>
   </scm>
-  <assignedNode>garvan-win-10</assignedNode>
+  <assignedNode>garvan-win10-2</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -45,7 +52,7 @@
   <builders>
     <hudson.tasks.BatchFile>
       <command>cd shg-quantification-tools&#xd;
-&quot;C:\Program Files\MATLAB\R2016b\bin\matlab.exe&quot; -nosplash -nodesktop -wait -log compile_output.txt -r &quot;cd(&apos;%CD%&apos;); Compile; quit();&quot;&#xd;
+&quot;C:\Program Files\MATLAB\R2018b\bin\matlab.exe&quot; -nosplash -nodesktop -wait -log compile_output.txt -r &quot;cd(&apos;%CD%&apos;); Compile; quit();&quot;&#xd;
 </command>
     </hudson.tasks.BatchFile>
   </builders>
