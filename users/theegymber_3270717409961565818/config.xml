@@ -45,7 +45,7 @@
       <emailAddress>theegymber@gmail.com</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
     <org.jenkinsci.plugins.GithubAccessTokenProperty plugin="github-oauth@0.31">
-      <accessToken>{AQAAABAAAAAwzuVSWDaN6TeZWwclgalqUh+GurkyQnSP9PuG4fm5dTZM6CzK8pGy63oDycrFpiJKAI1XUsNqaJbkDlGbfTilHA==}</accessToken>
+      <accessToken>{AQAAABAAAAAwbenr8Y7c8pWRXld/o+rUBc0oMHb4cYsP33D5lvzO6gHmY7R2brRm76hHcKU2puyRn/T7XEKyc2q1fJNxwwUOkA==}</accessToken>
     </org.jenkinsci.plugins.GithubAccessTokenProperty>
   </properties>
 </user>
