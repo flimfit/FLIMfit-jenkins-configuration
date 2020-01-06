@@ -19,7 +19,7 @@
         </tokenList>
       </tokenStore>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.18">
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.3.0">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
     <hudson.model.MyViewsProperty>
@@ -39,7 +39,7 @@
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.23">
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.29">
       <emailAddress>sean.warren09@imperial.ac.uk</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
     <io.jenkins.blueocean.autofavorite.user.FavoritingUserProperty plugin="blueocean-autofavorite@1.2.3">
@@ -53,14 +53,18 @@
         </entry>
       </data>
     </hudson.plugins.favorite.user.FavoriteUserProperty>
-    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@2.3.0">
+    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@2.3.2">
       <providerId>default</providerId>
     </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
     <jenkins.security.seed.UserSeedProperty>
       <seed>0fcb3ea887a22c36</seed>
     </jenkins.security.seed.UserSeedProperty>
-    <org.jenkinsci.plugins.GithubAccessTokenProperty plugin="github-oauth@0.31">
-      <accessToken>{AQAAABAAAAAwahH4et1za9kJApT5jD4JwvgGYwJmbw1U15QAoi12W6bjKZjqj5KvKcfoqin5/tVwh22Lyze4VR1Z6Xz8NPs0vA==}</accessToken>
+    <jenkins.plugins.slack.user.SlackUserProperty plugin="slack@2.35">
+      <disableNotifications>false</disableNotifications>
+    </jenkins.plugins.slack.user.SlackUserProperty>
+    <hudson.model.TimeZoneProperty/>
+    <org.jenkinsci.plugins.GithubAccessTokenProperty plugin="github-oauth@0.33">
+      <accessToken>{AQAAABAAAAAwJG6EPiPTXV1ZZ56VByFGe5BkA3p4Mpg5SW5x48/tQpAAC8I8zvmNzB4+bSQZFk2UgsWQuW3P72sjEH16coFbRA==}</accessToken>
     </org.jenkinsci.plugins.GithubAccessTokenProperty>
   </properties>
 </user>
